@@ -1,5 +1,6 @@
 '''
-Generate a gantt chart from data saved locally in ./data/ folder
+Generate a gantt chart from data saved locally in ./data/ folder.
+Most of the following code is adapted from https://github.com/maxwellbade/plotly_gantt_chart/blob/main/diagrams%20(1).ipynb.
 '''
 
 import pandas as pd
