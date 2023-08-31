@@ -10,12 +10,12 @@ import plotly.graph_objs as go
 import chart_studio
 import chart_studio.plotly as py 
 import chart_studio.tools as tls
+import argparse
 
-df = pd.read_csv('gantt_chart_new.csv',encoding='latin1')
-df['Start'] = df['Start'].astype('datetime64')
-df['Finish'] = df['Finish'].astype('datetime64')
+df = pd.read_pickle('./data/nlp_conferences_data.pkl')
 # print(df.dtypes)
 # print(df.head())
+# exit()
 
 colors = {'Technology' : 'rgb(30,144,255)'
           , 'Technology - Date TBD' : 'rgb(211,211,211)'
@@ -133,5 +133,5 @@ fig.update_layout(
 )
 
 # fig.show()
-fig.write_html("C:/Users/maxwell.bade/Downloads/ie_3_gantt.html")
+fig.write_html("./outputs/ganttchart_{}")
 go.FigureWidget(fig)
