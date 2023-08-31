@@ -1,7 +1,7 @@
-'''
+"""
 Generate a gantt chart from data saved locally in ./data/ folder.
 Most of the following code is adapted from https://github.com/maxwellbade/plotly_gantt_chart/blob/main/diagrams%20(1).ipynb.
-'''
+"""
 
 import pandas as pd
 import plotly.express as px
@@ -21,7 +21,7 @@ df = pd.read_pickle('./data/nlp_conferences_data.pkl')
 # argparse arguments retrieval
 parser = argparse.ArgumentParser()
 parser.add_argument("-y", "--year", help="Select the year to consider for the Gantt chart. Default is current year or the year after if current is not in the dataframe.", type=int, default=get_default_year(df)) 
-parser.add_argument("-s", "--show", help="Select what timespans to display between 'deadlines' (shows timespans from paper due to notification of acceptance) and 'conf' (shows when the conference starts and ends)")
+parser.add_argument("-s", "--show", help="Select what timespans to display between 'deadlines' (shows timespans from paper due to notification of acceptance) and 'conf' (shows when the conference starts and ends).", default='conf')
 
 arguments = parser.parse_args() 
 year = arguments.year
@@ -40,7 +40,7 @@ fig = px.timeline(df
                   , x_start=start
                   , x_end=end
                   , y="Acronym"
-                  , hover_name="Task"
+                  , hover_name="ConferenceName"
 #                   , facet_col="Dimension"
 #                   , facet_col_wrap=40
 #                   , facet_col_spacing=.99
@@ -53,22 +53,21 @@ fig = px.timeline(df
                   , template='plotly_white'
                   , height=800
                   , width=1500
-                  , color='Dimension'
-                  , title ="<b>IE 3.0 Gantt Chart 2021</b>"
-#                   , color=colors
+                  , color='CORE2023'
+                  , title ="<b>NLP-related conferences Gantt chart</b>"
                  )
 
 fig.update_layout(
     bargap=0.5
     ,bargroupgap=0.1
-    ,xaxis_range=[df.Start.min(), df.Finish.max()]
+    ,xaxis_range=[df[f'{start}'].min(), df[f'{end}'].max()]
     ,xaxis = dict(
         showgrid=True
         ,rangeslider_visible=True
         ,side ="top"
         ,tickmode = 'array'
         ,dtick="M1"
-        ,tickformat="Q%q %Y \n"
+        ,tickformat="%d/%m/%Y\n" #"Q%q %Y \n"
         ,ticklabelmode="period"        
         ,ticks="outside"
         ,tickson="boundaries"
@@ -77,6 +76,8 @@ fig.update_layout(
         ,ticklen=20
         ,tickfont=dict(
             family='Old Standard TT, serif',size=24,color='gray')
+
+        # set a range selector at the bottom of the window to select a custom timespan
         ,rangeselector=dict(
             buttons=list([
                 dict(count=1, label="1m", step="month", stepmode="backward"),
@@ -123,7 +124,7 @@ fig.update_traces( #marker_color='rgb(158,202,225)'
 
 fig.update_layout(
     title="<b>NLP-related conferences Gantt chart</b>",
-    xaxis_title="Time",
+    xaxis_title="",
 #     margin_l=400,
     yaxis_title="Conferences",
     legend_title="Rank: ",
