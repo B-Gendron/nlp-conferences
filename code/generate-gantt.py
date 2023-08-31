@@ -17,6 +17,11 @@ df = pd.read_pickle('./data/nlp_conferences_data.pkl')
 # print(df.head())
 # exit()
 
+# argparse arguments retrieval
+
+
+# select the appropriate subset of dataframe to process according to the user's requirements
+
 colors = {'Technology' : 'rgb(30,144,255)'
           , 'Technology - Date TBD' : 'rgb(211,211,211)'
           , 'People' : 'rgb(95,158,160)'
