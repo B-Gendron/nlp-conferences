@@ -39,21 +39,21 @@ title = "NLP-related conferences - Venue schedule" if show == "conf" else "NLP-r
 df = select_data_subset(df, year, show)
 
 fig = px.timeline(df
-                  , x_start=start
-                  , x_end=end
-                  , y="Acronym"
-                  , hover_name="ConferenceName"
-                  , color_discrete_sequence=px.colors.qualitative.Prism
-                  , opacity=.7
-                  , text="Acronym"
-                  , range_x=None
-                  , range_y=None
-                  , template='plotly_white'
-                  , height=800
-                  , width=1500
-                  , color='CORE2023'
-                  , title =f"<b>{title}</b>"
-                 )
+                , x_start=start
+                , x_end=end
+                , y="Acronym"
+                , hover_name="ConferenceName"
+                , color_discrete_sequence=px.colors.qualitative.Prism
+                , opacity=.7
+                , text="Acronym"
+                , range_x=None
+                , range_y=None
+                , template='plotly_white'
+                , height=800
+                , width=1500
+                , color='CORE2023'
+                , title =f"<b>{title}</b>"
+                )
 
 fig.update_layout(
     bargap=0.5 #0.5
@@ -61,7 +61,7 @@ fig.update_layout(
     ,xaxis_range=[df[f'{start}'].min(), df[f'{end}'].max()]
     ,xaxis = dict(
         showgrid=True
-        ,rangeslider_visible=True
+        ,rangeslider_visible=True # try to configure default position of range slider 
         ,side ="top" # "top"
         ,tickmode = 'array'
         ,dtick="M1"
