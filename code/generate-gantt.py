@@ -78,23 +78,6 @@ fig.update_layout(
         ,ticklen=20
         ,tickfont=dict(
             family='Old Standard TT, serif',size=18,color='gray')
-
-        # set a range selector at the bottom of the window to select a custom timespan
-    #     ,rangeselector=dict(
-    #         buttons=list([
-    #             dict(count=1, label="1m", step="month", stepmode="backward"),
-    #             dict(count=6, label="6m", step="month", stepmode="backward"),
-    #             dict(count=1, label="YTD", step="year", stepmode="todate"),
-    #             dict(count=1, label="1y", step="year", stepmode="backward"),
-    #             dict(step="all")
-    #         ])
-    #         ,x=.37
-    #         ,y=-.05
-    #         ,font=dict(
-    #             family="Arial",
-    #             size=14,
-    #             color="darkgray"
-    # ))
     )
     
     ,yaxis = dict(
@@ -121,9 +104,6 @@ fig.update_layout(
             ,color="darkgray"))
 )
 
-fig.update_traces( #marker_color='rgb(158,202,225)'
-                   marker_line_color='rgb(8,48,107)'
-                  , marker_line_width=1.5, opacity=0.95)
 
 fig.update_layout(
     title=f"<b>{title}</b>",
