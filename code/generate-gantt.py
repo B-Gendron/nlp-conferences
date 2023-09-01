@@ -77,8 +77,7 @@ fig.update_layout(
         ,layer='below traces'
         ,ticklen=20
         ,tickfont=dict(
-            family='Old Standard TT, serif',size=18,color='gray')
-    )
+            family='Old Standard TT, serif',size=18,color='gray'))
     
     ,yaxis = dict(
         title= ""
@@ -102,13 +101,17 @@ fig.update_layout(
             family="Arial"
             ,size=14
             ,color="darkgray"))
+
+    ,title=dict(
+        text=f"<b>{title}</b>"
+        ,y=0.98
+    )
 )
 
 
 fig.update_layout(
-    title=f"<b>{title}</b>",
+    # title=f"<b>{title}</b>",
     xaxis_title="",
-    # margin_b=40,
     yaxis_title="Conferences",
     legend_title="Rank: ",
     font=dict(
