@@ -49,7 +49,7 @@ fig = px.timeline(df
 #                   , color_discrete_sequence=['green']*len(df)
                   , color_discrete_sequence=px.colors.qualitative.Prism
                   , opacity=.7
-#                   , text="Task"
+                  , text="Acronym"
                   , range_x=None
                   , range_y=None
                   , template='plotly_white'
@@ -83,7 +83,7 @@ fig.update_layout(
     ,yaxis = dict(
         title= ""
         ,autorange='reversed'  # True, False or "reversed"
-        ,automargin=True
+        ,automargin=True # True
 #         ,anchor="free"
         ,ticklen=10
         ,showgrid=True
@@ -94,7 +94,7 @@ fig.update_layout(
     ,legend=dict(
         orientation="h"
         ,yanchor="bottom"
-        ,y=1.1
+        ,y=1.2
         ,title=""
         ,xanchor="right"
         ,x=1
@@ -117,6 +117,11 @@ fig.update_layout(
         color="darkgray"
     )
 )
+
+# fig.update_layout(
+#     title=f"<b>{title}</b>",
+#     margin = dict(l=0, r=0, t=0, b=10)
+# )
 
 fig.show(config={'displayModeBar': False})
 fig.write_html(f"./outputs/ganttchart_{get_datetime()}.html", include_plotlyjs=True, config={'displayModeBar': False})
