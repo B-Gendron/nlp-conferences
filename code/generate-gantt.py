@@ -60,13 +60,13 @@ fig = px.timeline(df
                  )
 
 fig.update_layout(
-    bargap=0.5
-    ,bargroupgap=0.1
+    bargap=0.5 #0.5
+    ,bargroupgap=0.1 #0.1
     ,xaxis_range=[df[f'{start}'].min(), df[f'{end}'].max()]
     ,xaxis = dict(
         showgrid=True
         ,rangeslider_visible=True
-        ,side ="top"
+        ,side ="top" # "top"
         ,tickmode = 'array'
         ,dtick="M1"
         ,tickformat="%d/%m/%Y\n" #"Q%q %Y \n"
@@ -77,7 +77,7 @@ fig.update_layout(
         ,layer='below traces'
         ,ticklen=20
         ,tickfont=dict(
-            family='Old Standard TT, serif',size=24,color='gray')
+            family='Old Standard TT, serif',size=18,color='gray')
 
         # set a range selector at the bottom of the window to select a custom timespan
     #     ,rangeselector=dict(
@@ -99,7 +99,7 @@ fig.update_layout(
     
     ,yaxis = dict(
         title= ""
-        ,autorange=True #"reversed"
+        ,autorange='reversed'  # True, False or "reversed"
         ,automargin=True
 #         ,anchor="free"
         ,ticklen=10
@@ -128,16 +128,16 @@ fig.update_traces( #marker_color='rgb(158,202,225)'
 fig.update_layout(
     title=f"<b>{title}</b>",
     xaxis_title="",
-#     margin_l=400,
+    # margin_b=40,
     yaxis_title="Conferences",
     legend_title="Rank: ",
     font=dict(
         family="Arial",
-        size=24,
+        size=20,
         color="darkgray"
     )
 )
 
-fig.show()
-fig.write_html(f"./outputs/ganttchart_{get_datetime()}")
+fig.show(config={'displayModeBar': False})
+fig.write_html(f"./outputs/ganttchart_{get_datetime()}.html", include_plotlyjs=True, config={'displayModeBar': False})
 go.FigureWidget(fig)
