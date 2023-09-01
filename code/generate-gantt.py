@@ -33,6 +33,8 @@ if show == 'deadlines':
 elif show == 'conf':
     start, end = 'ConfStarts', 'ConfEnds'
 
+title = "NLP-related conferences - Venue schedule" if show == "conf" else "NLP-related conferences - Submission deadlines"
+
 # select the appropriate subset of dataframe to process according to the user's requirements
 df = select_data_subset(df, year, show)
 
@@ -54,7 +56,7 @@ fig = px.timeline(df
                   , height=800
                   , width=1500
                   , color='CORE2023'
-                  , title ="<b>NLP-related conferences Gantt chart</b>"
+                  , title =f"<b>{title}</b>"
                  )
 
 fig.update_layout(
@@ -97,7 +99,7 @@ fig.update_layout(
     
     ,yaxis = dict(
         title= ""
-        ,autorange="reversed"
+        ,autorange=True #"reversed"
         ,automargin=True
 #         ,anchor="free"
         ,ticklen=10
@@ -124,7 +126,7 @@ fig.update_traces( #marker_color='rgb(158,202,225)'
                   , marker_line_width=1.5, opacity=0.95)
 
 fig.update_layout(
-    title="<b>NLP-related conferences Gantt chart</b>",
+    title=f"<b>{title}</b>",
     xaxis_title="",
 #     margin_l=400,
     yaxis_title="Conferences",
