@@ -12,6 +12,7 @@ This tool allows to visualize either the conferences dates or the associated dea
 <p align="center">
 <i>Fig. 1 - User interface</i>
 </p>
+
 ## Usage
 
 First, clone this repo and get inside it:
