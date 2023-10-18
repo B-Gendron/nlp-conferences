@@ -29,7 +29,7 @@ cd nlp-conferences
 bash deadlines.sh
 ```
 
-### Display conference venur dates
+### Display conference venue dates
 
 ```
 bash confs.sh
