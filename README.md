@@ -34,3 +34,5 @@ bash deadlines.sh
 ```
 bash confs.sh
 ```
+
+After executing one of the scripts above, the HTML output will be displayed on your navigator if you have one currently opened. Anyway, it is saved in the `outputs` directory of the repo.
