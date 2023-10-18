@@ -5,10 +5,8 @@ This repository proposes a tool that generates Gantt chart from [a google spread
 ## Overview
 
 This tool allows to visualize either the conferences dates or the associated deadlines (paper submission deadline and notification of acceptance). The user can choose the year to visualize, depending on data availability. Conferences or durations between deadlines are displayed using a specific color code that corresponds to conference ranks according to [CORE2023 ranking](http://portal.core.edu.au/conf-ranks/?search=&by=all&source=CORE2023&sort=atitle&page=1).  
-
-  <figure>
-    <img width="1440" alt="Capture d’écran 2023-08-31 à 15 20 40" src="https://github.com/B-Gendron/nlp-conferences/assets/95307996/c134a463-10ec-4058-871b-7d453b2ac02e" style="width:100%">
-  </figure>
+<br></br>
+![Capture d’écran 2023-10-18 à 16 52 06](https://github.com/B-Gendron/nlp-conferences/assets/95307996/42206cf8-140b-4f8f-8e09-540293ffba07)
 <p align="center">
 <i>Fig. 1 - User interface</i>
 </p>
