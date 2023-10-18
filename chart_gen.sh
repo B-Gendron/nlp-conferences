@@ -1,5 +1,5 @@
 #!/bin/bash
 
-python3 fetch-data.py
+python3 ./code/fetch-data.py
 
-python3 generate-gantt.py
+python3 ./code/generate-gantt.py
