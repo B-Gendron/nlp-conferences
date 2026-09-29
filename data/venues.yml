@@ -1,0 +1,135 @@
+# Registry of the venues this tool tracks.  >>> This is the file you edit. <<<
+#
+# Each venue is either
+#   * synced   : has `upstream:` (a path in github.com/ccfddl/ccf-deadlines, conference/<path>.yml).
+#                Dates, places and CORE/CCF ranks are refreshed automatically by `npm run sync`.
+#   * manual   : has no `upstream:`; you list editions yourself under `editions:` (see the bottom of the file).
+#
+# Fields
+#   id           unique slug
+#   domains      any of: nlp | kg (semantic web, knowledge engineering, KR) | ml | ir
+#   neurosym     true if the venue is a natural home for neurosymbolic work
+#   review_days  typical days between submission deadline and notification. Used ONLY to show an
+#                *estimated* notification date (dashed in the UI) when the real one isn't known yet.
+#                Initial values come from the 2024 edition of the original spreadsheet. Only set it for
+#                venues with a single direct-submission track: ARR-based venues (*ACL) have no meaningful value.
+#   core         CORE rank fallback for manual venues (synced venues get it from upstream)
+#
+# Real notification dates go in data/overrides.yml and always win over estimates.
+
+# ------------------------------------------------------------------ NLP & LLMs
+- { id: acl,    upstream: AI/acl,    domains: [nlp] }
+- { id: emnlp,  upstream: AI/emnlp,  domains: [nlp] }
+- { id: naacl,  upstream: AI/naacl,  domains: [nlp] }
+- { id: eacl,   upstream: AI/eacl,   domains: [nlp] }
+- { id: coling, upstream: AI/coling, domains: [nlp] }
+- { id: conll,  upstream: AI/conll,  domains: [nlp] }
+- { id: ijcnlp, upstream: AI/ijcnlp, domains: [nlp] }
+- { id: colm,   upstream: AI/colm,   domains: [nlp, ml] }
+- { id: nlpcc,  upstream: AI/nlpcc,  domains: [nlp] }
+
+# ------------------------------------------------------------------ ML & general AI
+- { id: nips,   upstream: AI/nips,   domains: [ml], neurosym: true }
+- { id: iclr,   upstream: AI/iclr,   domains: [ml], neurosym: true, review_days: 109 }
+- { id: icml,   upstream: AI/icml,   domains: [ml] }
+- { id: aaai,   upstream: AI/aaai,   domains: [ml, kg], neurosym: true, review_days: 116 }
+- { id: ijcai,  upstream: AI/ijcai,  domains: [ml, kg], neurosym: true }
+- { id: ecai,   upstream: AI/ecai,   domains: [ml, kg], neurosym: true }
+- { id: ijcnn,  upstream: AI/ijcnn,  domains: [ml], review_days: 60 }
+- { id: pkdd,   upstream: DB/pkdd,   domains: [ml] }
+
+# ------------------------------------------------------------------ Semantic Web, KE & reasoning
+- { id: iswc,     upstream: DB/iswc,     domains: [kg], neurosym: true }
+- { id: kr,       upstream: AI/kr,       domains: [kg], neurosym: true }
+- { id: rulemlrr, upstream: AI/rulemlrr, domains: [kg], neurosym: true }
+- { id: ksem,     upstream: AI/ksem,     domains: [kg] }
+- { id: iccbr,    upstream: AI/iccbr,    domains: [kg] }
+
+# ------------------------------------------------------------------ Information retrieval & the Web
+- { id: www,    upstream: MX/www,    domains: [ir, kg] }
+- { id: sigir,  upstream: DB/sigir,  domains: [ir] }
+- { id: cikm,   upstream: DB/cikm,   domains: [ir, kg] }
+- { id: ecir,   upstream: DB/ecir,   domains: [ir, nlp], review_days: 78 }
+- { id: wsdm,   upstream: DB/wsdm,   domains: [ir] }
+- { id: sigkdd, upstream: DB/sigkdd, domains: [ml, ir] }
+
+# ------------------------------------------------------------------ Manual venues (not in the upstream dataset)
+# Add editions here, e.g.
+#   editions:
+#     - year: 2027
+#       link: https://2027.eswc-conferences.org
+#       place: Somewhere, Country
+#       start: 2027-05-30
+#       end: 2027-06-03
+#       tz: AoE
+#       cycles:
+#         - { label: Research track, abstract: 2026-12-01, deadline: 2026-12-08, notification: 2027-02-20 }
+- id: eswc
+  acronym: ESWC
+  name: Extended Semantic Web Conference
+  url: https://eswc-conferences.org
+  domains: [kg]
+  neurosym: true
+  editions: []
+- id: ekaw
+  acronym: EKAW
+  name: International Conference on Knowledge Engineering and Knowledge Management
+  url: https://ekaw.org
+  domains: [kg]
+  neurosym: true
+  editions:
+    - year: 2026
+      link: https://ekaw2026.di.unito.it
+      start: 2026-09-29
+      end: 2026-10-01
+      tz: AoE
+      cycles:
+        - { label: Research papers, abstract: 2026-05-15, deadline: 2026-05-22, notification: 2026-07-10 }
+- id: nesy
+  acronym: NeSy
+  name: International Conference on Neural-Symbolic Learning and Reasoning
+  url: https://nesyconf.org
+  domains: [kg, ml]
+  neurosym: true
+  editions:
+    - year: 2026
+      link: https://2026.nesyconf.org
+      place: Lisbon, Portugal
+      start: 2026-09-01
+      end: 2026-09-04
+      tz: AoE
+      cycles:
+        - { label: Phase 1 (R&R possible), abstract: 2026-02-24, deadline: 2026-03-03, notification: 2026-04-24 }
+        - { label: Phase 2, abstract: 2026-06-09, deadline: 2026-06-16, notification: 2026-07-16 }
+        - { label: Industry track, deadline: 2026-07-17, notification: 2026-07-31 }
+- id: lrec
+  acronym: LREC
+  name: Language Resources and Evaluation Conference
+  url: https://lrec-coling.org
+  domains: [nlp]
+  editions: []
+- id: taln
+  acronym: TALN
+  name: Traitement Automatique des Langues Naturelles
+  url: https://www.atala.org
+  domains: [nlp]
+  editions: []
+- id: egc
+  acronym: EGC
+  name: Extraction et Gestion des Connaissances
+  url: https://www.egc.asso.fr
+  domains: [kg]
+  review_days: 35
+  editions: []
+- id: semantics
+  acronym: SEMANTiCS
+  name: International Conference on Semantic Systems
+  url: https://www.semantics.cc
+  domains: [kg]
+  editions: []
+- id: kcap
+  acronym: K-CAP
+  name: International Conference on Knowledge Capture
+  url: https://www.k-cap.org
+  domains: [kg]
+  editions: []

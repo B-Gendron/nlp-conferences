@@ -1,0 +1,16 @@
+{
+  "name": "nlp-conferences",
+  "version": "2.0.0",
+  "description": "Deadline radar for NLP/LLM and Semantic Web/Knowledge Engineering venues",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "sync": "node scripts/sync.mjs",
+    "serve": "node scripts/serve.mjs",
+    "test": "node --test scripts/*.test.mjs"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "engines": { "node": ">=20" }
+}

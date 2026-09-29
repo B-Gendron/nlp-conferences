@@ -1,0 +1,1190 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//nlp-conferences//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:NLP & Semantic Web deadlines
+BEGIN:VEVENT
+UID:acl26-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260106T105959Z
+DTEND:20260106T115959Z
+SUMMARY:⏰ ACL 2026 submission deadline (ARR submission\; ACL commitment de
+ adline: March 14\, 2026.)
+DESCRIPTION:Annual Meeting of the Association for Computational Linguistic
+ s\nhttps://2026.aclweb.org/
+URL:https://2026.aclweb.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ ACL 2026 submission deadline (ARR submission\; ACL commitmen
+ t deadline: March 14\, 2026.)
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:acl26-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20260702
+DTEND;VALUE=DATE:20260708
+SUMMARY:🎤 ACL 2026 – San Diego\, California\, United States
+URL:https://2026.aclweb.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:acl27-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20270817
+DTEND;VALUE=DATE:20270823
+SUMMARY:🎤 ACL 2027 – Kyoto\, Japan
+URL:https://2027.aclweb.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:emnlp26-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260526T105959Z
+DTEND:20260526T115959Z
+SUMMARY:⏰ EMNLP 2026 submission deadline (ARR Submission)
+DESCRIPTION:The annual Conference on Empirical Methods in Natural Language
+  Processing\nhttps://2026.emnlp.org/
+URL:https://2026.emnlp.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ EMNLP 2026 submission deadline (ARR Submission)
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:emnlp26-dl-1@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260803T105959Z
+DTEND:20260803T115959Z
+SUMMARY:⏰ EMNLP 2026 submission deadline (Commitment deadline for papers w
+ ith ARR reviews and meta-reviews)
+DESCRIPTION:The annual Conference on Empirical Methods in Natural Language
+  Processing\nhttps://2026.emnlp.org/
+URL:https://2026.emnlp.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ EMNLP 2026 submission deadline (Commitment deadline for pape
+ rs with ARR reviews and meta-reviews)
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:emnlp26-nt-1@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260821T115959Z
+DTEND:20260821T125959Z
+SUMMARY:📬 EMNLP 2026 notification (Commitment deadline for papers with AR
+ R reviews and meta-reviews)
+DESCRIPTION:The annual Conference on Empirical Methods in Natural Language
+  Processing\nhttps://2026.emnlp.org/
+URL:https://2026.emnlp.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:📬 EMNLP 2026 notification (Commitment deadline for papers wit
+ h ARR reviews and meta-reviews)
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:emnlp26-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261030
+SUMMARY:🎤 EMNLP 2026 – Budapest\, Hungary
+URL:https://2026.emnlp.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:naacl27-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20261013T105959Z
+DTEND:20261013T115959Z
+SUMMARY:⏰ NAACL 2027 submission deadline (ARR Submission)
+DESCRIPTION:The Annual Conference of the North American Chapter of the Ass
+ ociation for Computational Linguistics\nhttps://2027.naacl.org/
+URL:https://2027.naacl.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ NAACL 2027 submission deadline (ARR Submission)
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:naacl27-dl-1@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20261224T105959Z
+DTEND:20261224T115959Z
+SUMMARY:⏰ NAACL 2027 submission deadline (NAACL commitment after ARR meta-
+ reviews\; reviewed papers only)
+DESCRIPTION:The Annual Conference of the North American Chapter of the Ass
+ ociation for Computational Linguistics\nhttps://2027.naacl.org/
+URL:https://2027.naacl.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ NAACL 2027 submission deadline (NAACL commitment after ARR m
+ eta-reviews\; reviewed papers only)
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:naacl27-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20270601
+DTEND;VALUE=DATE:20270606
+SUMMARY:🎤 NAACL 2027 – San Francisco\, California\, USA
+URL:https://2027.naacl.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:eacl27-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260804T105959Z
+DTEND:20260804T115959Z
+SUMMARY:⏰ EACL 2027 submission deadline (ARR Submission)
+DESCRIPTION:The Annual Conference of the European Chapter of the Associati
+ on for Computational Linguistics\nhttps://2027.eacl.org/
+URL:https://2027.eacl.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ EACL 2027 submission deadline (ARR Submission)
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eacl27-dl-1@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20261012T105959Z
+DTEND:20261012T115959Z
+SUMMARY:⏰ EACL 2027 submission deadline (EACL commitment after ARR meta-re
+ views\; reviewed papers only)
+DESCRIPTION:The Annual Conference of the European Chapter of the Associati
+ on for Computational Linguistics\nhttps://2027.eacl.org/
+URL:https://2027.eacl.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ EACL 2027 submission deadline (EACL commitment after ARR met
+ a-reviews\; reviewed papers only)
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eacl27-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20270309
+DTEND;VALUE=DATE:20270315
+SUMMARY:🎤 EACL 2027 – Athens\, Greece
+URL:https://2027.eacl.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:coling27-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20261013T105959Z
+DTEND:20261013T115959Z
+SUMMARY:⏰ COLING 2027 submission deadline (ARR Submission)
+DESCRIPTION:International Conference on Computational Linguistics\nhttps:/
+ /2027.coling-iccl.org/
+URL:https://2027.coling-iccl.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ COLING 2027 submission deadline (ARR Submission)
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:coling27-dl-1@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20261224T105959Z
+DTEND:20261224T115959Z
+SUMMARY:⏰ COLING 2027 submission deadline (COLING commitment after ARR met
+ a-reviews\; reviewed papers only)
+DESCRIPTION:International Conference on Computational Linguistics\nhttps:/
+ /2027.coling-iccl.org/
+URL:https://2027.coling-iccl.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ COLING 2027 submission deadline (COLING commitment after ARR
+  meta-reviews\; reviewed papers only)
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:coling27-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20270509
+DTEND;VALUE=DATE:20270515
+SUMMARY:🎤 COLING 2027 – Macau SAR\, China
+URL:https://2027.coling-iccl.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:conll26-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260220T105959Z
+DTEND:20260220T115959Z
+SUMMARY:⏰ CoNLL 2026 submission deadline
+DESCRIPTION:Conference on Computational Natural Language Learning\nhttps:/
+ /www.conll.org/
+URL:https://www.conll.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ CoNLL 2026 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:conll26-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20260703
+DTEND;VALUE=DATE:20260705
+SUMMARY:🎤 CoNLL 2026 – San Diego\, California\, United States
+URL:https://www.conll.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:ijcnlp2026-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260526T105959Z
+DTEND:20260526T115959Z
+SUMMARY:⏰ IJCNLP 2026 submission deadline (ARR Submission\; commitment dea
+ dline: 2026-08-07\; second-round commitment: 2026-08-25\; AACL-IJCNLP 202
+ 6 (the 5th AACL & 15th IJCNLP))
+DESCRIPTION:International Joint Conference on Natural Language Processing\
+ nhttps://2026.aaclnet.org/
+URL:https://2026.aaclnet.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ IJCNLP 2026 submission deadline (ARR Submission\; commitment
+  deadline: 2026-08-07\; second-round commitment: 2026-08-25\; AACL-IJCNLP
+  2026 (the 5th AACL & 15th IJCNLP))
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ijcnlp2026-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261111
+SUMMARY:🎤 IJCNLP 2026 – Hengqin\, Zhuhai\, China
+URL:https://2026.aaclnet.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:colm26-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260401T105959Z
+DTEND:20260401T115959Z
+SUMMARY:⏰ COLM 2026 submission deadline
+DESCRIPTION:Conference on Language Modeling\nhttps://colm.cc/Conferences/2
+ 026/CallForPapers
+URL:https://colm.cc/Conferences/2026/CallForPapers
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ COLM 2026 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:colm26-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20261006
+DTEND;VALUE=DATE:20261010
+SUMMARY:🎤 COLM 2026 – Hilton Union Square\, San Francisco\, USA
+URL:https://colm.cc/Conferences/2026/CallForPapers
+END:VEVENT
+BEGIN:VEVENT
+UID:nlpcc2026-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260620T145959Z
+DTEND:20260620T155959Z
+SUMMARY:⏰ NLPCC 2026 submission deadline
+DESCRIPTION:CCF International Conference on Natural Language Processing an
+ d Chinese Computing\nhttp://tcci.ccf.org.cn/conference/2026/
+URL:http://tcci.ccf.org.cn/conference/2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ NLPCC 2026 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:nlpcc2026-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20261103
+DTEND;VALUE=DATE:20261106
+SUMMARY:🎤 NLPCC 2026 – Macau\, China
+URL:http://tcci.ccf.org.cn/conference/2026/
+END:VEVENT
+BEGIN:VEVENT
+UID:nips26-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260507T105900Z
+DTEND:20260507T115900Z
+SUMMARY:⏰ NeurIPS 2026 submission deadline
+DESCRIPTION:Conference on Neural Information Processing Systems\nhttps://n
+ eurips.cc/Conferences/2026
+URL:https://neurips.cc/Conferences/2026
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ NeurIPS 2026 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:nips26-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261214
+SUMMARY:🎤 NeurIPS 2026 – Sydney\, Australia\; Atlanta\, USA\; Paris\, Fra
+ nce
+URL:https://neurips.cc/Conferences/2026
+END:VEVENT
+BEGIN:VEVENT
+UID:iclr26-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20250925T105959Z
+DTEND:20250925T115959Z
+SUMMARY:⏰ ICLR 2026 submission deadline
+DESCRIPTION:International Conference on Learning Representations\nhttps://
+ iclr.cc/Conferences/2026
+URL:https://iclr.cc/Conferences/2026
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ ICLR 2026 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:iclr26-nt-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260112T115959Z
+DTEND:20260112T125959Z
+SUMMARY:📬 ICLR 2026 notification [estimated]
+DESCRIPTION:International Conference on Learning Representations\nhttps://
+ iclr.cc/Conferences/2026
+URL:https://iclr.cc/Conferences/2026
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:📬 ICLR 2026 notification [estimated]
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:iclr26-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20260423
+DTEND;VALUE=DATE:20260428
+SUMMARY:🎤 ICLR 2026 – Rio de Janeiro\, Brazil
+URL:https://iclr.cc/Conferences/2026
+END:VEVENT
+BEGIN:VEVENT
+UID:iclr27-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260926T105959Z
+DTEND:20260926T115959Z
+SUMMARY:⏰ ICLR 2027 submission deadline
+DESCRIPTION:International Conference on Learning Representations\nhttps://
+ iclr.cc/Conferences/2027
+URL:https://iclr.cc/Conferences/2027
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ ICLR 2027 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:iclr27-nt-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20261217T115959Z
+DTEND:20261217T125959Z
+SUMMARY:📬 ICLR 2027 notification
+DESCRIPTION:International Conference on Learning Representations\nhttps://
+ iclr.cc/Conferences/2027
+URL:https://iclr.cc/Conferences/2027
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:📬 ICLR 2027 notification
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:iclr27-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20270426
+DTEND;VALUE=DATE:20270501
+SUMMARY:🎤 ICLR 2027 – San Francisco\, CA\, USA
+URL:https://iclr.cc/Conferences/2027
+END:VEVENT
+BEGIN:VEVENT
+UID:icml26-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260129T105959Z
+DTEND:20260129T115959Z
+SUMMARY:⏰ ICML 2026 submission deadline (Paper Submissions Open on OpenRev
+ iew Jan 08 2026 12:00AM UTC-0)
+DESCRIPTION:International Conference on Machine Learning\nhttps://icml.cc/
+ Conferences/2026
+URL:https://icml.cc/Conferences/2026
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ ICML 2026 submission deadline (Paper Submissions Open on Ope
+ nReview Jan 08 2026 12:00AM UTC-0)
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:icml26-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20260706
+DTEND;VALUE=DATE:20260712
+SUMMARY:🎤 ICML 2026 – Seoul\, Korea
+URL:https://icml.cc/Conferences/2026
+END:VEVENT
+BEGIN:VEVENT
+UID:aaai27-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260729T105959Z
+DTEND:20260729T115959Z
+SUMMARY:⏰ AAAI 2027 submission deadline
+DESCRIPTION:AAAI Conference on Artificial Intelligence\nhttps://aaai.org/c
+ onference/aaai/aaai-27/
+URL:https://aaai.org/conference/aaai/aaai-27/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ AAAI 2027 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aaai27-nt-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20261122T115959Z
+DTEND:20261122T125959Z
+SUMMARY:📬 AAAI 2027 notification [estimated]
+DESCRIPTION:AAAI Conference on Artificial Intelligence\nhttps://aaai.org/c
+ onference/aaai/aaai-27/
+URL:https://aaai.org/conference/aaai/aaai-27/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:📬 AAAI 2027 notification [estimated]
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aaai27-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20270216
+DTEND;VALUE=DATE:20270224
+SUMMARY:🎤 AAAI 2027 – Montréal\, Québec\, Canada
+URL:https://aaai.org/conference/aaai/aaai-27/
+END:VEVENT
+BEGIN:VEVENT
+UID:ijcai26-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260120T105959Z
+DTEND:20260120T115959Z
+SUMMARY:⏰ IJCAI 2026 submission deadline
+DESCRIPTION:International Joint Conference on Artificial Intelligence\nhtt
+ ps://2026.ijcai.org/
+URL:https://2026.ijcai.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ IJCAI 2026 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ijcai26-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20260815
+DTEND;VALUE=DATE:20260822
+SUMMARY:🎤 IJCAI 2026 – Bremen\, Germany
+URL:https://2026.ijcai.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:ijcai27-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20270807
+DTEND;VALUE=DATE:20270818
+SUMMARY:🎤 IJCAI 2027 – Kyoto\, Japan and Hengqin\, China
+URL:https://www.ijcai.org/node/8
+END:VEVENT
+BEGIN:VEVENT
+UID:ecai26-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260120T105959Z
+DTEND:20260120T115959Z
+SUMMARY:⏰ ECAI 2026 submission deadline
+DESCRIPTION:European Conference on Artificial Intelligence\nhttps://2026.i
+ jcai.org/
+URL:https://2026.ijcai.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ ECAI 2026 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ecai26-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20260815
+DTEND;VALUE=DATE:20260822
+SUMMARY:🎤 ECAI 2026 – Bremen\, Germany
+URL:https://2026.ijcai.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:ecai27-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20270415T105959Z
+DTEND:20270415T115959Z
+SUMMARY:⏰ ECAI 2027 submission deadline
+DESCRIPTION:European Conference on Artificial Intelligence\nhttps://ecai20
+ 27.org/
+URL:https://ecai2027.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ ECAI 2027 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ecai27-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20271002
+DTEND;VALUE=DATE:20271008
+SUMMARY:🎤 ECAI 2027 – Athens\, Greece
+URL:https://ecai2027.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:ijcnn2026-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260201T105959Z
+DTEND:20260201T115959Z
+SUMMARY:⏰ IJCNN 2026 submission deadline
+DESCRIPTION:International Joint Conference on Neural Networks\nhttps://att
+ end.ieee.org/wcci-2026/
+URL:https://attend.ieee.org/wcci-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ IJCNN 2026 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ijcnn2026-nt-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260402T115959Z
+DTEND:20260402T125959Z
+SUMMARY:📬 IJCNN 2026 notification [estimated]
+DESCRIPTION:International Joint Conference on Neural Networks\nhttps://att
+ end.ieee.org/wcci-2026/
+URL:https://attend.ieee.org/wcci-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:📬 IJCNN 2026 notification [estimated]
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ijcnn2026-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20260621
+DTEND;VALUE=DATE:20260627
+SUMMARY:🎤 IJCNN 2026 – Maastricht Exhibition & Congress Center\, Maastric
+ ht\, The Netherlands
+URL:https://attend.ieee.org/wcci-2026/
+END:VEVENT
+BEGIN:VEVENT
+UID:ijcnn2027-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20270201T105959Z
+DTEND:20270201T115959Z
+SUMMARY:⏰ IJCNN 2027 submission deadline
+DESCRIPTION:International Joint Conference on Neural Networks\nhttps://ijc
+ nn.org/2027
+URL:https://ijcnn.org/2027
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ IJCNN 2027 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ijcnn2027-nt-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20270402T115959Z
+DTEND:20270402T125959Z
+SUMMARY:📬 IJCNN 2027 notification [estimated]
+DESCRIPTION:International Joint Conference on Neural Networks\nhttps://ijc
+ nn.org/2027
+URL:https://ijcnn.org/2027
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:📬 IJCNN 2027 notification [estimated]
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ijcnn2027-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20270614
+DTEND;VALUE=DATE:20270619
+SUMMARY:🎤 IJCNN 2027 – Cape Town\, South Africa
+URL:https://ijcnn.org/2027
+END:VEVENT
+BEGIN:VEVENT
+UID:ecmlpkdd2026-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260313T105959Z
+DTEND:20260313T115959Z
+SUMMARY:⏰ ECML-PKDD 2026 submission deadline
+DESCRIPTION:European Conference on Machine Learning and 25th Principles an
+ d Practice of Knowledge Discovery in Databases\nhttps://ecmlpkdd.org/2026
+ /
+URL:https://ecmlpkdd.org/2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ ECML-PKDD 2026 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ecmlpkdd2026-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20260907
+DTEND;VALUE=DATE:20260912
+SUMMARY:🎤 ECML-PKDD 2026 – Naples\, Italy
+URL:https://ecmlpkdd.org/2026/
+END:VEVENT
+BEGIN:VEVENT
+UID:ecmlpkdd2027-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20270920
+DTEND;VALUE=DATE:20270925
+SUMMARY:🎤 ECML-PKDD 2027 – Eindhoven\, The Netherlands
+URL:https://ecmlpkdd.org/2027/
+END:VEVENT
+BEGIN:VEVENT
+UID:iswc26-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260508T105959Z
+DTEND:20260508T115959Z
+SUMMARY:⏰ ISWC 2026 submission deadline
+DESCRIPTION:International Semantic Web Conference\nhttps://iswc2026.semant
+ icweb.org/
+URL:https://iswc2026.semanticweb.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ ISWC 2026 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:iswc26-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20261025
+DTEND;VALUE=DATE:20261030
+SUMMARY:🎤 ISWC 2026 – Bari\, Italy
+URL:https://iswc2026.semanticweb.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:krd26-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260214T105959Z
+DTEND:20260214T115959Z
+SUMMARY:⏰ KR 2026 submission deadline
+DESCRIPTION:International Conference on Principles of Knowledge Representa
+ tion and Reasoning\nhttps://kr.org/KR2026/
+URL:https://kr.org/KR2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ KR 2026 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:krd26-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20260720
+DTEND;VALUE=DATE:20260724
+SUMMARY:🎤 KR 2026 – Lisbon\, Portugal
+URL:https://kr.org/KR2026/
+END:VEVENT
+BEGIN:VEVENT
+UID:rulemlrr2026-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260523T105959Z
+DTEND:20260523T115959Z
+SUMMARY:⏰ RuleML+RR 2026 submission deadline
+DESCRIPTION:International Joint Conference on Rules and Reasoning\nhttps:/
+ /2026.declarativeai.net/events/ruleml-rr
+URL:https://2026.declarativeai.net/events/ruleml-rr
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ RuleML+RR 2026 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:rulemlrr2026-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20260824
+DTEND;VALUE=DATE:20260827
+SUMMARY:🎤 RuleML+RR 2026 – Vilnius\, Lithuania
+URL:https://2026.declarativeai.net/events/ruleml-rr
+END:VEVENT
+BEGIN:VEVENT
+UID:ksem26-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260115T225959Z
+DTEND:20260115T235959Z
+SUMMARY:⏰ KSEM 2026 submission deadline
+DESCRIPTION:International Conference on Knowledge Science\, Engineering an
+ d Management\nhttps://ksem2026.rosc.org.cn/
+URL:https://ksem2026.rosc.org.cn/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ KSEM 2026 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ksem26-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20260717
+DTEND;VALUE=DATE:20260720
+SUMMARY:🎤 KSEM 2026 – Beijing\, China
+URL:https://ksem2026.rosc.org.cn/
+END:VEVENT
+BEGIN:VEVENT
+UID:iccbr2026-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260328T105959Z
+DTEND:20260328T115959Z
+SUMMARY:⏰ ICCBR 2026 submission deadline
+DESCRIPTION:International Conference on Case-Based Reasoning\nhttps://2026
+ .iccbr.org/
+URL:https://2026.iccbr.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ ICCBR 2026 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:iccbr2026-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20260813
+DTEND;VALUE=DATE:20260817
+SUMMARY:🎤 ICCBR 2026 – Bremen\, Germany
+URL:https://2026.iccbr.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:www26-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20251008T105959Z
+DTEND:20251008T115959Z
+SUMMARY:⏰ WWW 2026 submission deadline
+DESCRIPTION:International World Wide Web Conferences\nhttps://www2026.thew
+ ebconf.org/
+URL:https://www2026.thewebconf.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ WWW 2026 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:www26-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20260413
+DTEND;VALUE=DATE:20260418
+SUMMARY:🎤 WWW 2026 – Dubaï\, UAE
+URL:https://www2026.thewebconf.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:www27-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20261026T105959Z
+DTEND:20261026T115959Z
+SUMMARY:⏰ WWW 2027 submission deadline
+DESCRIPTION:International World Wide Web Conferences\nhttps://www2027.thew
+ ebconf.org/
+URL:https://www2027.thewebconf.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ WWW 2027 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:www27-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20270510
+DTEND;VALUE=DATE:20270515
+SUMMARY:🎤 WWW 2027 – Dublin\, Ireland
+URL:https://www2027.thewebconf.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:sigir26-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260123T105959Z
+DTEND:20260123T115959Z
+SUMMARY:⏰ SIGIR 2026 submission deadline
+DESCRIPTION:International Conference on Research on Development in Informa
+ tion Retrieval\nhttps://sigir2026.org/en-AU
+URL:https://sigir2026.org/en-AU
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ SIGIR 2026 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:sigir26-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20260720
+DTEND;VALUE=DATE:20260725
+SUMMARY:🎤 SIGIR 2026 – Melbourne\, Australia
+URL:https://sigir2026.org/en-AU
+END:VEVENT
+BEGIN:VEVENT
+UID:sigir27-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20270122T105959Z
+DTEND:20270122T115959Z
+SUMMARY:⏰ SIGIR 2027 submission deadline
+DESCRIPTION:International Conference on Research on Development in Informa
+ tion Retrieval\nhttps://sigir2027.org/
+URL:https://sigir2027.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ SIGIR 2027 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:sigir27-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20270718
+DTEND;VALUE=DATE:20270725
+SUMMARY:🎤 SIGIR 2027 – San Jose\, California\, USA
+URL:https://sigir2027.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:cikm26-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260524T105959Z
+DTEND:20260524T115959Z
+SUMMARY:⏰ CIKM 2026 submission deadline
+DESCRIPTION:ACM International Conference on Information and Knowledge Mana
+ gement\nhttps://cikm2026.diag.uniroma1.it/
+URL:https://cikm2026.diag.uniroma1.it/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ CIKM 2026 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cikm26-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261112
+SUMMARY:🎤 CIKM 2026 – Rome\, Italy
+URL:https://cikm2026.diag.uniroma1.it/
+END:VEVENT
+BEGIN:VEVENT
+UID:ecir26-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20251003T105959Z
+DTEND:20251003T115959Z
+SUMMARY:⏰ ECIR 2026 submission deadline
+DESCRIPTION:European Conference on Information Retrieval\nhttps://ecir2026
+ .eu/
+URL:https://ecir2026.eu/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ ECIR 2026 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ecir26-nt-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20251220T115959Z
+DTEND:20251220T125959Z
+SUMMARY:📬 ECIR 2026 notification [estimated]
+DESCRIPTION:European Conference on Information Retrieval\nhttps://ecir2026
+ .eu/
+URL:https://ecir2026.eu/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:📬 ECIR 2026 notification [estimated]
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ecir26-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20260330
+DTEND;VALUE=DATE:20260402
+SUMMARY:🎤 ECIR 2026 – Delft\, The Netherlands
+URL:https://ecir2026.eu/
+END:VEVENT
+BEGIN:VEVENT
+UID:ecir27-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20261005T225959Z
+DTEND:20261005T235959Z
+SUMMARY:⏰ ECIR 2027 submission deadline
+DESCRIPTION:European Conference on Information Retrieval\nhttps://ecir2027
+ .co.uk/
+URL:https://ecir2027.co.uk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ ECIR 2027 submission deadline
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ecir27-nt-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20261222T235959Z
+DTEND:20261223T005959Z
+SUMMARY:📬 ECIR 2027 notification [estimated]
+DESCRIPTION:European Conference on Information Retrieval\nhttps://ecir2027
+ .co.uk/
+URL:https://ecir2027.co.uk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:📬 ECIR 2027 notification [estimated]
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ecir27-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20270321
+DTEND;VALUE=DATE:20270326
+SUMMARY:🎤 ECIR 2027 – Southampton\, UK
+URL:https://ecir2027.co.uk/
+END:VEVENT
+BEGIN:VEVENT
+UID:wsdm27-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260825T105959Z
+DTEND:20260825T115959Z
+SUMMARY:⏰ WSDM 2027 submission deadline (Full Paper)
+DESCRIPTION:International Conference on Web Search and Data Mining\nhttps:
+ //wsdm-conference.org/2027/
+URL:https://wsdm-conference.org/2027/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ WSDM 2027 submission deadline (Full Paper)
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wsdm27-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20270215
+DTEND;VALUE=DATE:20270220
+SUMMARY:🎤 WSDM 2027 – Cordis\, Hong Kong SAR\, China
+URL:https://wsdm-conference.org/2027/
+END:VEVENT
+BEGIN:VEVENT
+UID:sigkdd26-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20250801T105959Z
+DTEND:20250801T115959Z
+SUMMARY:⏰ SIGKDD 2026 submission deadline (1st round of 2 total rounds)
+DESCRIPTION:ACM Knowledge Discovery and Data Mining\nhttps://kdd2026.kdd.o
+ rg/
+URL:https://kdd2026.kdd.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ SIGKDD 2026 submission deadline (1st round of 2 total rounds
+ )
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:sigkdd26-dl-1@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260209T105959Z
+DTEND:20260209T115959Z
+SUMMARY:⏰ SIGKDD 2026 submission deadline (2nd round of 2 total rounds)
+DESCRIPTION:ACM Knowledge Discovery and Data Mining\nhttps://kdd2026.kdd.o
+ rg/
+URL:https://kdd2026.kdd.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ SIGKDD 2026 submission deadline (2nd round of 2 total rounds
+ )
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:sigkdd26-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20260809
+DTEND;VALUE=DATE:20260814
+SUMMARY:🎤 SIGKDD 2026 – Jeju\, Korea
+URL:https://kdd2026.kdd.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:sigkdd27-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260727T105959Z
+DTEND:20260727T115959Z
+SUMMARY:⏰ SIGKDD 2027 submission deadline (1st round of 2 total rounds)
+DESCRIPTION:ACM Knowledge Discovery and Data Mining\nhttps://kdd2027.kdd.o
+ rg/
+URL:https://kdd2027.kdd.org/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ SIGKDD 2027 submission deadline (1st round of 2 total rounds
+ )
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:sigkdd27-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20270801
+DTEND;VALUE=DATE:20270806
+SUMMARY:🎤 SIGKDD 2027 – San Jose\, California\, USA
+URL:https://kdd2027.kdd.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:ekaw-2026-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260523T105959Z
+DTEND:20260523T115959Z
+SUMMARY:⏰ EKAW 2026 submission deadline (Research papers)
+DESCRIPTION:International Conference on Knowledge Engineering and Knowledg
+ e Management\nhttps://ekaw2026.di.unito.it
+URL:https://ekaw2026.di.unito.it
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ EKAW 2026 submission deadline (Research papers)
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ekaw-2026-nt-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260711T115959Z
+DTEND:20260711T125959Z
+SUMMARY:📬 EKAW 2026 notification (Research papers)
+DESCRIPTION:International Conference on Knowledge Engineering and Knowledg
+ e Management\nhttps://ekaw2026.di.unito.it
+URL:https://ekaw2026.di.unito.it
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:📬 EKAW 2026 notification (Research papers)
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ekaw-2026-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20260929
+DTEND;VALUE=DATE:20261002
+SUMMARY:🎤 EKAW 2026
+URL:https://ekaw2026.di.unito.it
+END:VEVENT
+BEGIN:VEVENT
+UID:nesy-2026-dl-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260304T105959Z
+DTEND:20260304T115959Z
+SUMMARY:⏰ NeSy 2026 submission deadline (Phase 1 (R&R possible))
+DESCRIPTION:International Conference on Neural-Symbolic Learning and Reaso
+ ning\nhttps://2026.nesyconf.org
+URL:https://2026.nesyconf.org
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ NeSy 2026 submission deadline (Phase 1 (R&R possible))
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:nesy-2026-nt-0@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260425T115959Z
+DTEND:20260425T125959Z
+SUMMARY:📬 NeSy 2026 notification (Phase 1 (R&R possible))
+DESCRIPTION:International Conference on Neural-Symbolic Learning and Reaso
+ ning\nhttps://2026.nesyconf.org
+URL:https://2026.nesyconf.org
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:📬 NeSy 2026 notification (Phase 1 (R&R possible))
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:nesy-2026-dl-1@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260617T105959Z
+DTEND:20260617T115959Z
+SUMMARY:⏰ NeSy 2026 submission deadline (Phase 2)
+DESCRIPTION:International Conference on Neural-Symbolic Learning and Reaso
+ ning\nhttps://2026.nesyconf.org
+URL:https://2026.nesyconf.org
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ NeSy 2026 submission deadline (Phase 2)
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:nesy-2026-nt-1@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260717T115959Z
+DTEND:20260717T125959Z
+SUMMARY:📬 NeSy 2026 notification (Phase 2)
+DESCRIPTION:International Conference on Neural-Symbolic Learning and Reaso
+ ning\nhttps://2026.nesyconf.org
+URL:https://2026.nesyconf.org
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:📬 NeSy 2026 notification (Phase 2)
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:nesy-2026-dl-2@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260718T105959Z
+DTEND:20260718T115959Z
+SUMMARY:⏰ NeSy 2026 submission deadline (Industry track)
+DESCRIPTION:International Conference on Neural-Symbolic Learning and Reaso
+ ning\nhttps://2026.nesyconf.org
+URL:https://2026.nesyconf.org
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⏰ NeSy 2026 submission deadline (Industry track)
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:nesy-2026-nt-2@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART:20260801T115959Z
+DTEND:20260801T125959Z
+SUMMARY:📬 NeSy 2026 notification (Industry track)
+DESCRIPTION:International Conference on Neural-Symbolic Learning and Reaso
+ ning\nhttps://2026.nesyconf.org
+URL:https://2026.nesyconf.org
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:📬 NeSy 2026 notification (Industry track)
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:nesy-2026-conf@nlp-conferences
+DTSTAMP:20260929T110956Z
+DTSTART;VALUE=DATE:20260901
+DTEND;VALUE=DATE:20260905
+SUMMARY:🎤 NeSy 2026 – Lisbon\, Portugal
+URL:https://2026.nesyconf.org
+END:VEVENT
+END:VCALENDAR

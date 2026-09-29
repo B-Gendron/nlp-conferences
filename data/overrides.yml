@@ -1,0 +1,20 @@
+# Hand-curated facts that the upstream dataset lacks or gets wrong.
+# Keyed by edition id (= upstream `id`, e.g. emnlp26, or `<venue>-<year>` for manual venues, e.g. eswc-2027).
+# Overrides are re-applied on every sync, so they never get lost.
+#
+#   emnlp26:
+#     notification: 2026-08-20          # shorthand: notification for the LAST submission cycle
+#     tz: AoE                           # timezone for the dates below (defaults to the edition's)
+#     cycles:                           # patch cycles by index (null = leave untouched)
+#       - null
+#       - { notification: 2026-09-20 }
+#     add_cycles:
+#       - { label: Late-breaking, deadline: 2026-09-01 }
+#     place: Budapest, Hungary
+#
+# Tip: whenever you learn a real notification date, add it here — it replaces the "estimated" one in the UI.
+
+
+# Notification for EMNLP 2026 (ARR commitment route), per the official important-dates page.
+emnlp26:
+  notification: 2026-08-20

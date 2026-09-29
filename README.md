@@ -1,35 +1,61 @@
+# Venue Radar — deadlines & decisions for NLP/LLM and Semantic Web/KE venues
 
-# NLP-related conferences Gantt chart generator
-This repository proposes a tool that generates Gantt chart from [a google spreadsheet](https://docs.google.com/spreadsheets/d/1QCnD7HpnaAkYqb4f70uqqmOtZL_IYoAuRRe8AeF6stI/edit#gid=0) containing key information about upcoming NLP-related conferences. 
+A research-planning tool for people working between **language models** and **knowledge graphs / semantic web / knowledge engineering** (e.g. neurosymbolic research). It tracks submission deadlines, **notification-of-acceptance dates** and conference schedules, and helps you build a publication strategy: what to submit where, when you'll hear back, and where to resubmit if the answer is no.
 
-## Overview
+## What it does
 
-This tool allows to visualize either the conferences dates or the associated deadlines (paper submission deadline and notification of acceptance). The user can choose the year to visualize, depending on data availability. Conferences or durations between deadlines are displayed using a specific color code that corresponds to conference ranks according to [CORE2023 ranking](http://portal.core.edu.au/conf-ranks/?search=&by=all&source=CORE2023&sort=atitle&page=1).  
-<br></br>
-![Capture d’écran 2023-10-18 à 16 52 06](https://github.com/B-Gendron/nlp-conferences/assets/95307996/42206cf8-140b-4f8f-8e09-540293ffba07)
-<p align="center">
-<i>Fig. 1 - User interface</i>
-</p>
+- **Timeline** — one row per venue: submission → decision windows, deadline markers, conference span, "today" line. 6–24 month zoom.
+- **Deadlines** — what you can still submit to, soonest first, with countdowns.
+- **My plan** — star venues to get a chronological agenda, deadline-crunch warnings, and a *"if the decision goes the wrong way"* panel listing the deadlines that open right after each expected decision. Shareable by link, exportable to `.ics`.
+- Filters by domain (NLP & LLMs · Semantic Web & KE · ML & AI · IR & Web), a *neurosymbolic-friendly* flag, CORE rank, and free-text search (`/` to focus).
+- Times shown in your local timezone or AoE; light/dark theme; works on phones.
+- **Calendar feed** (`calendar.ics`) you can subscribe to in Google/Apple Calendar; **"What changed"** log of moved/announced deadlines after every sync.
 
-## Usage
+## How the data works (no more Google Sheet)
 
-First, clone this repo and get inside it:
+Data lives in the repo as versioned text, in two layers:
 
+| Layer | Where | Updated |
+|---|---|---|
+| **Upstream** — ~30 venues, CORE/CCF ranks, places, deadlines | [`ccfddl/ccf-deadlines`](https://github.com/ccfddl/ccf-deadlines) (community-maintained, MIT) | automatically, weekly |
+| **Yours** — which venues to track, niche venues, notification dates | `data/venues.yml`, `data/overrides.yml` | by you (a normal git commit / PR) |
+
+Upstream has essentially **no notification dates**, so this tool takes them from you:
+
+- Real decision dates go in `data/overrides.yml` (see the examples in that file). They always win.
+- Until then, venues with a `review_days` value in `venues.yml` show an **estimated** decision date (dashed in the UI, badge "Decision ≈"). Venues without one show "Decision: unknown" rather than a guess.
+- Venues not covered upstream (ESWC, EKAW, NeSy, TALN, EGC, …) are *manual* venues: list their editions directly in `data/venues.yml`.
+
+`npm run sync` merges everything into `site/data/conferences.json`, `site/data/changelog.json` and `site/calendar.ics`. If upstream is unreachable it keeps the last good data for that venue.
+
+## Run it
+
+Requires Node ≥ 20.
+
+```bash
+npm install
+npm run sync     # refresh data from upstream (add --offline to reuse the cache)
+npm run serve    # http://localhost:8080
+npm test         # unit tests for timezone/date parsing, overrides, diffing, ICS
 ```
-git clone https://github.com/B-Gendron/nlp-conferences.git
-cd nlp-conferences
-```
 
-### Display conference deadlines (from submission due to notification of acceptance)
+The site is plain static files (`site/`, vanilla ES modules, no build step, no dependencies).
 
-```
-bash deadlines.sh
-```
+## Deploy (free, auto-updating)
 
-### Display conference venue dates
+1. Push to GitHub, then *Settings → Pages → Source: GitHub Actions*.
+2. `.github/workflows/sync-and-deploy.yml` runs weekly (Tuesdays 14:00 UTC, or on demand / on every push): tests → sync → commit refreshed data → publish `site/`.
 
-```
-bash confs.sh
-```
+## Deep links
 
-After executing one of the scripts above, the HTML output will be displayed on your navigator if you have one currently opened. Anyway, it is saved in the `outputs` directory of the repo.
+`#view=plan&stars=emnlp26,iclr27` opens a shared plan · `#edition=ecir27` opens a venue · `#theme=dark`.
+
+## Caveats
+
+- Dates are only as good as the community source and your overrides. **Always confirm on the official call for papers.**
+- ACL-family venues use ACL Rolling Review; their ARR cycles and commitment deadlines appear as separate cycles. Decision dates for those are not estimated (no reliable single review time).
+- The CORE rank shown is whatever upstream currently carries (originally this project used CORE2023).
+
+## Migrating from the old version
+
+The Python + Plotly scripts and the Google-Sheet pickle were removed (they remain in git history). The typical review durations from your 2024 sheet were carried over as `review_days` where they still make sense.
