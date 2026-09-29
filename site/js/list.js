@@ -4,11 +4,11 @@ import { h, DAY, fmtWeekday, fmtDateTime, fmtDate, fmtRange, relative, urgency, 
 import { state, matches, isStarred, toggleStar } from './model.js';
 
 export function decisionBadge(c) {
-  if (!c.nt) return h('span.badge.unknown', { title: 'No notification date known yet. Add one in data/overrides.yml' }, 'Decision: unknown');
+  if (!c.nt) return h('span.badge.unknown', { title: 'No notification date known yet. Add one in data/overrides.yml' }, 'Decision date: unknown');
   const iso = new Date(c.nt).toISOString();
   return h('span.badge' + (c.notificationEstimated ? '.est' : '.ok'),
     { title: c.notificationEstimated ? "Estimated from this venue's typical review time" : 'Announced by the venue' },
-    (c.notificationEstimated ? 'Decision ≈ ' : 'Decision ') + fmtDate(iso));
+    (c.notificationEstimated ? 'Decision date ≈ ' : 'Decision date: ') + fmtDate(iso));
 }
 
 export function renderList(root, data, { openDetail }) {

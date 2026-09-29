@@ -1,11 +1,28 @@
 // "My plan": the starred venues as an agenda, with crunch warnings and "if rejected, where next?" fallbacks.
 
-import { h, DAY, fmtWeekday, fmtDay, fmtMonth, fmtDate, fmtRange, relative, rankClass } from './util.js';
-import { matches, milestones, isStarred, toggleStar, shareUrl } from './model.js';
+import { h, DAY, debounce, fmtWeekday, fmtDay, fmtMonth, fmtDate, fmtRange, relative, rankClass } from './util.js';
+import { matches, milestones, isStarred, toggleStar, shareUrl, getNote, setNote, nextDeadline } from './model.js';
 import { buildIcs } from './ics.js';
 
+/** Textarea that autosaves a private note for an edition (stored in this browser only). */
+export function noteEditor(ed, { rows = 3 } = {}) {
+  const status = h('span.muted.small.saved', '');
+  const save = debounce((text) => {
+    setNote(ed.id, text);
+    status.textContent = 'Saved';
+    setTimeout(() => { status.textContent = ''; }, 1500);
+  }, 350);
+  const ta = h('textarea.note', {
+    rows, placeholder: 'What do you plan to submit here? Paper title, status, co-authors, to-dos…',
+    'aria-label': `Notes for ${ed.v.acronym} ${ed.e.year}`,
+    oninput: (e) => { status.textContent = ''; save(e.target.value); },
+  });
+  ta.value = getNote(ed.id);
+  return h('div.note-box', ta, status);
+}
+
 const ICON = { abstract: '◇', deadline: '◆', notification: '●', conference: '▬' };
-const NAME = { abstract: 'Abstract due', deadline: 'Submission deadline', notification: 'Decision', conference: 'Conference' };
+const NAME = { abstract: 'Abstract due', deadline: 'Submission deadline', notification: 'Decision date', conference: 'Conference' };
 
 export function renderPlan(root, data, { openDetail, download }) {
   const now = Date.now();
@@ -55,6 +72,7 @@ export function renderPlan(root, data, { openDetail, download }) {
       h('span.r.muted', m.kind === 'conference' ? fmtRange(m.ed.e.start, m.ed.e.end) : relative(iso, now)),
       m.estimated ? h('span.badge.est', 'est.') : null));
   }
+  root.append(notesSection(starred, now, openDetail));
   root.append(h('div.plan-cols', agenda, fallbacks));
 
   root.append(h('p.muted.small', 'Tip: click any entry to open the venue. Remove venues from your plan with ★.'));
@@ -99,7 +117,7 @@ function buildFallbacks(starred, data, now) {
     count++;
     sec.append(h('div.fb',
       h('div.fb-head', h('strong', `${ed.v.acronym} ${ed.e.year}`), c.label ? h('span.muted', ` · ${c.label}`) : null,
-        h('span.muted', ` – decision ${c.notificationEstimated ? '≈ ' : ''}${fmtDate(nIso)}`)),
+        h('span.muted', ` – decision date ${c.notificationEstimated ? '≈ ' : ''}${fmtDate(nIso)}`)),
       options.length ? h('ul', options.map(({ o, oc }) => h('li',
         h('span.d', fmtDay(new Date(oc.dl).toISOString())), ' ',
         h('strong', `${o.v.acronym} ${o.e.year}`), ' ', h('span.pill.' + rankClass(o.rank), o.rank === '—' ? '' : o.rank),
@@ -109,4 +127,21 @@ function buildFallbacks(starred, data, now) {
   }
   if (!count) sec.append(h('p.muted', 'None of your venues has a known (or estimated) decision date ahead yet.'));
   return sec;
+}
+
+/** One card per starred venue with a notes field – "what am I submitting here?". */
+function notesSection(starred, now, openDetail) {
+  const sorted = [...starred].sort((a, b) => (nextDeadline(a, now)?.dl ?? 9e15) - (nextDeadline(b, now)?.dl ?? 9e15));
+  return h('section.plan-sec', h('h3', 'Your venues & notes'),
+    h('p.muted.small', 'Notes stay in this browser only (they are not part of the share link).'),
+    h('div.note-grid', sorted.map((ed) => {
+      const nd = nextDeadline(ed, now);
+      return h('div.note-card',
+        h('div.note-head',
+          h('button.name', { onclick: () => openDetail(ed) }, h('strong', ed.v.acronym), ' ', ed.e.year),
+          h('span.pill.' + rankClass(ed.rank), ed.rank === '—' ? '' : ed.rank),
+          h('span.muted.small', nd ? `deadline ${relative(new Date(nd.dl).toISOString(), now)}` : 'no upcoming deadline'),
+          h('button.star.on', { title: 'Remove from my plan', onclick: () => toggleStar(ed.id) }, '★')),
+        noteEditor(ed));
+    })));
 }

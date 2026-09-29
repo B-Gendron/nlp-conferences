@@ -14,6 +14,7 @@ const DEFAULTS = {
   layers: { deadlines: true, conference: true },
   tz: 'local',
   stars: [],
+  notes: {},            // edition id -> free text, kept even if the venue is later un-starred
 };
 
 export const state = applyHash(load());
@@ -37,10 +38,23 @@ function applyHash(st) {
 
 export const shareUrl = () => `${location.origin}${location.pathname}#view=plan&stars=${state.stars.join(',')}`;
 
+function persist() {
+  try { localStorage.setItem(KEY, JSON.stringify(state)); } catch { /* private mode */ }
+}
+
 export function update(patch) {
   Object.assign(state, patch);
-  try { localStorage.setItem(KEY, JSON.stringify(state)); } catch { /* private mode */ }
+  persist();
   listeners.forEach((fn) => fn());
+}
+
+export const getNote = (id) => state.notes?.[id] || '';
+
+/** Saves without re-rendering, so typing in a textarea never loses focus. */
+export function setNote(id, text) {
+  state.notes = { ...state.notes };
+  if (text.trim()) state.notes[id] = text; else delete state.notes[id];
+  persist();
 }
 
 export const isStarred = (id) => state.stars.includes(id);

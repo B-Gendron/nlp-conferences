@@ -2,7 +2,10 @@ name: Sync deadlines & deploy
 
 on:
   schedule:
-    - cron: '0 14 * * 2'      # weekly, Tuesdays 14:00 UTC
+    # Weekly, Tuesdays 14:00 Paris time. Cron is UTC-only, so fire at both possible UTC hours
+    # (summer = 12:00, winter = 13:00) and let the `gate` job keep whichever one is 14:00 in Paris.
+    - cron: '0 12 * * 2'
+    - cron: '0 13 * * 2'
   push:
     branches: [main]
   workflow_dispatch:
@@ -17,7 +20,22 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.check.outputs.run }}
+    steps:
+      - id: check
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$(TZ=Europe/Paris date +%H)" != "14" ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
   build:
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

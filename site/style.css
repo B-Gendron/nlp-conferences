@@ -230,3 +230,19 @@ pre { text-align: left; overflow: auto; }
 }
 @media (prefers-reduced-motion: no-preference) { .card, .chip, .btn { transition: border-color .12s, box-shadow .12s; } }
 @media print { .top { position: static; } #tabs, .controls, .tl-opts { display: none; } }
+
+/* ---------- theme button, notes */
+.icon-btn { background: none; border: 1px solid var(--line); color: var(--text); width: 32px; height: 32px; border-radius: 9px; display: inline-grid; place-items: center; padding: 0; }
+.icon-btn:hover { border-color: var(--accent); color: var(--accent); }
+textarea.note {
+  width: 100%; resize: vertical; min-height: 68px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 9px;
+  background: var(--bg); color: var(--text); font: inherit; font-size: 14px; line-height: 1.45;
+}
+textarea.note:focus { outline: 2px solid var(--accent); border-color: transparent; }
+.note-box { position: relative; } .note-box .saved { position: absolute; right: 8px; bottom: 6px; pointer-events: none; }
+.note-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; margin-top: 10px; }
+.note-card { border: 1px solid var(--line-2); border-radius: 12px; padding: 10px 12px; background: var(--surface); }
+.note-head { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+.note-head .name { background: none; border: 0; padding: 0; font-size: 15px; }
+.note-head .star { margin-left: auto; }
+.note-slot:empty { display: none; }

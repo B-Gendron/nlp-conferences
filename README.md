@@ -7,6 +7,7 @@ A research-planning tool for people working between **language models** and **kn
 - **Timeline** — one row per venue: submission → decision windows, deadline markers, conference span, "today" line. 6–24 month zoom.
 - **Deadlines** — what you can still submit to, soonest first, with countdowns.
 - **My plan** — star venues to get a chronological agenda, deadline-crunch warnings, and a *"if the decision goes the wrong way"* panel listing the deadlines that open right after each expected decision. Shareable by link, exportable to `.ics`.
+- **Notes** on every venue in your plan (what you plan to submit, status, to-dos), saved in your browser.
 - Filters by domain (NLP & LLMs · Semantic Web & KE · ML & AI · IR & Web), a *neurosymbolic-friendly* flag, CORE rank, and free-text search (`/` to focus).
 - Times shown in your local timezone or AoE; light/dark theme; works on phones.
 - **Calendar feed** (`calendar.ics`) you can subscribe to in Google/Apple Calendar; **"What changed"** log of moved/announced deadlines after every sync.
@@ -44,7 +45,7 @@ The site is plain static files (`site/`, vanilla ES modules, no build step, no d
 ## Deploy (free, auto-updating)
 
 1. Push to GitHub, then *Settings → Pages → Source: GitHub Actions*.
-2. `.github/workflows/sync-and-deploy.yml` runs weekly (Tuesdays 14:00 UTC, or on demand / on every push): tests → sync → commit refreshed data → publish `site/`.
+2. `.github/workflows/sync-and-deploy.yml` runs weekly (Tuesdays 14:00 Paris time, or on demand / on every push): tests → sync → commit refreshed data → publish `site/`.
 
 ## Deep links
 

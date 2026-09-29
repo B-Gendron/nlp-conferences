@@ -1,8 +1,8 @@
-import { h, DOMAINS, RANKS, rankClass, fmtDate, fmtDateTime, fmtRange, relative, originalTime, tzMode, debounce, DAY } from './util.js';
+import { h, icon, LOCALE, DOMAINS, RANKS, rankClass, fmtDate, fmtDateTime, fmtRange, relative, originalTime, tzMode, debounce, DAY } from './util.js';
 import { state, update, listeners, loadData, isStarred, toggleStar, matches } from './model.js';
 import { renderTimeline } from './timeline.js';
 import { renderList, decisionBadge } from './list.js';
-import { renderPlan } from './plan.js';
+import { renderPlan, noteEditor } from './plan.js';
 import { buildIcs } from './ics.js';
 
 const $ = (s) => document.querySelector(s);
@@ -41,6 +41,9 @@ const dlg = $('#detail');
 function openDetail(ed) {
   const v = ed.v, e = ed.e;
   const others = v.editions.filter((x) => x.id !== e.id);
+  const noteSlot = h('div.note-slot');
+  const fillNote = () => noteSlot.replaceChildren(...(isStarred(ed.id) ? [h('h3', 'My notes'), noteEditor(ed)] : []));
+  fillNote();
   const body = h('div.detail',
     h('header',
       h('div',
@@ -58,16 +61,21 @@ function openDetail(ed) {
       e.link ? [h('dt', 'Website'), h('dd', h('a', { href: e.link, target: '_blank', rel: 'noopener' }, e.link.replace(/^https?:\/\//, '')))] : null),
     h('h3', 'Submission cycles'),
     e.cycles.length ? h('table.cycles',
-      h('thead', h('tr', ['Cycle', 'Abstract', 'Deadline', 'Decision'].map((t) => h('th', t)))),
+      h('thead', h('tr', ['Cycle', 'Abstract', 'Deadline', 'Decision date'].map((t) => h('th', t)))),
       h('tbody', ed.cycles.map((c) => h('tr',
         h('td', c.label || '—'),
         h('td', c.abstract ? fmtDate(c.abstract) : '—'),
         h('td', c.deadline ? [h('div', fmtDateTime(c.deadline)), h('div.muted.small', `${originalTime(c.deadline, e.tz)} · ${relative(c.deadline)}`)] : h('span.muted', 'TBD')),
         h('td', decisionBadge(c)))))) : h('p.muted', 'No submission dates published yet.'),
     others.length ? h('p.muted.small', 'Other editions on record: ', others.map((o) => `${o.year}`).join(', ')) : null,
+    noteSlot,
     h('div.actions',
       h('button.btn' + (isStarred(ed.id) ? '.on' : ''), {
-        onclick: (ev) => { toggleStar(ed.id); ev.currentTarget.classList.toggle('on'); ev.currentTarget.textContent = isStarred(ed.id) ? '★ In my plan' : '☆ Add to my plan'; },
+        onclick: (ev) => {
+          toggleStar(ed.id);
+          ev.currentTarget.textContent = isStarred(ed.id) ? '★ In my plan' : '☆ Add to my plan';
+          fillNote();
+        },
       }, isStarred(ed.id) ? '★ In my plan' : '☆ Add to my plan'),
       h('button.btn', { onclick: () => download(`${ed.id}.ics`, buildIcs([{ ...v, editions: [e] }], new Date().toISOString()), 'text/calendar') }, 'Add to calendar (.ics)'),
       e.link ? h('a.btn.primary', { href: e.link, target: '_blank', rel: 'noopener' }, 'Open call for papers ↗') : null),
@@ -80,6 +88,16 @@ function openDetail(ed) {
 dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
 
 // -------------------------------------------------------------- header ----
+
+/** Header button shows the current theme as a pictogram: auto (half disc), light (sun) or dark (moon). */
+function themeIcon() {
+  const t = document.documentElement.dataset.theme || 'auto';
+  const btn = $('#theme');
+  btn.replaceChildren(icon(t));
+  const next = { auto: 'dark', dark: 'light', light: 'auto' }[t];
+  btn.title = `Theme: ${t}. Click for ${next}`;
+  btn.setAttribute('aria-label', btn.title);
+}
 
 function chip(label, on, onclick, extra = {}) {
   return h('button.chip' + (on ? '.on' : ''), { 'aria-pressed': String(on), onclick, ...extra }, label);
@@ -121,7 +139,7 @@ function renderMeta() {
   const gen = new Date(data.generatedAt);
   const age = Math.floor((Date.now() - gen) / DAY);
   $('#updated').replaceChildren(
-    h('span' + (age > 14 ? '.stale' : ''), { title: gen.toLocaleString() },
+    h('span' + (age > 14 ? '.stale' : ''), { title: gen.toLocaleString(LOCALE) },
       `Data synced ${age <= 0 ? 'today' : age + ' day' + (age > 1 ? 's' : '') + ' ago'}${age > 14 ? ' – may be out of date' : ''}`));
   const ch = data.changes.slice(0, 30);
   const btn = $('#changes-btn');
@@ -130,10 +148,10 @@ function renderMeta() {
     const box = h('div.detail',
       h('header', h('h2', 'Recent changes'), h('button.icon', { 'aria-label': 'Close', onclick: () => dlg.close() }, '✕')),
       ch.length ? h('ul.changes', ch.map((c) => h('li',
-        h('span.muted', new Date(c.at).toLocaleDateString()), ' ',
+        h('span.muted', new Date(c.at).toLocaleDateString(LOCALE)), ' ',
         h('strong', `${c.venue} ${c.year}`), ' ',
         c.type === 'new-edition' ? 'new edition on record'
-          : `${c.field === 'notification' ? 'decision' : 'deadline'} ${c.type === 'moved' ? `moved ${fmtDate(c.from)} → ${fmtDate(c.to)}` : c.type === 'announced' ? `announced: ${fmtDate(c.to)}` : 'removed'}`,
+          : `${c.field === 'notification' ? 'decision date' : 'deadline'} ${c.type === 'moved' ? `moved ${fmtDate(c.from)} → ${fmtDate(c.to)}` : c.type === 'announced' ? `announced: ${fmtDate(c.to)}` : 'removed'}`,
         c.label ? h('span.muted', ` (${c.label})`) : null)))
         : h('p.muted', 'Nothing has changed since tracking started. Changes appear here after each sync.'));
     dlg.replaceChildren(box); dlg.showModal();
@@ -171,7 +189,9 @@ async function boot() {
     const next = cur === 'dark' ? 'light' : cur === 'light' ? '' : 'dark';
     if (next) document.documentElement.dataset.theme = next; else delete document.documentElement.dataset.theme;
     try { localStorage.setItem('nc.theme', next); } catch { /* ignore */ }
+    themeIcon();
   });
+  themeIcon();
   window.addEventListener('keydown', (e) => {
     if (e.key === '/' && document.activeElement !== q && !dlg.open) { e.preventDefault(); q.focus(); }
   });

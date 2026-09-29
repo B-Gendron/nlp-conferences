@@ -1,6 +1,7 @@
 // Small shared helpers: DOM builder, date formatting, ranks, domains.
 
 export const DAY = 86400000;
+export const LOCALE = 'en-GB';   // the UI is English-only, whatever the browser language
 
 /** Tiny hyperscript: h('div.card', {onclick}, child, 'text'). Never uses innerHTML, so upstream text can't inject markup. */
 export function h(tag, attrs, ...children) {
@@ -47,7 +48,7 @@ const zone = () => (tzMode.value === 'aoe' ? 'Etc/GMT+12' : undefined);
 const fmtCache = new Map();
 function fmt(key, opts) {
   const k = key + tzMode.value;
-  if (!fmtCache.has(k)) fmtCache.set(k, new Intl.DateTimeFormat(undefined, { ...opts, timeZone: zone() }));
+  if (!fmtCache.has(k)) fmtCache.set(k, new Intl.DateTimeFormat(LOCALE, { ...opts, timeZone: zone() }));
   return fmtCache.get(k);
 }
 
@@ -61,14 +62,14 @@ export const fmtMonth = (iso) => fmt('m', { month: 'long', year: 'numeric' }).fo
 /** Conference days are calendar dates (no timezone) – format them as such. */
 export function fmtRange(start, end) {
   if (!start) return null;
-  const f = (d, o) => new Intl.DateTimeFormat(undefined, { timeZone: 'UTC', ...o }).format(new Date(d));
+  const f = (d, o) => new Intl.DateTimeFormat(LOCALE, { timeZone: 'UTC', ...o }).format(new Date(d));
   const [s, e] = [start, end || start];
   if (s === e) return f(s, { day: 'numeric', month: 'short', year: 'numeric' });
   if (s.slice(0, 7) === e.slice(0, 7)) return `${f(s, { day: 'numeric' })}–${f(e, { day: 'numeric', month: 'short', year: 'numeric' })}`;
   return `${f(s, { day: 'numeric', month: 'short' })} – ${f(e, { day: 'numeric', month: 'short', year: 'numeric' })}`;
 }
 
-const rtf = new Intl.RelativeTimeFormat(undefined, { numeric: 'auto' });
+const rtf = new Intl.RelativeTimeFormat(LOCALE, { numeric: 'auto' });
 export function relative(iso, now = Date.now()) {
   const d = Date.parse(iso) - now;
   const days = Math.round(d / DAY);
@@ -100,3 +101,16 @@ export const debounce = (fn, wait = 120) => {
   let t;
   return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), wait); };
 };
+
+// Static, trusted SVG markup only (never build these from data).
+const ICONS = {
+  auto: '<circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/>',
+  light: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+  dark: '<path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/>',
+};
+export function icon(name) {
+  const svg = new DOMParser().parseFromString(
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]}</svg>`,
+    'image/svg+xml').documentElement;
+  return document.importNode(svg, true);
+}

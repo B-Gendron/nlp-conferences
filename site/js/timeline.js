@@ -1,6 +1,6 @@
 // Timeline (Gantt) view: one row per edition; submission → notification windows, deadline markers, conference span.
 
-import { h, DAY, fmtDate, fmtRange, fmtDateTime, relative, rankClass } from './util.js';
+import { h, DAY, LOCALE, fmtDate, fmtRange, fmtDateTime, relative, rankClass } from './util.js';
 import { state, matches, hasDates, sortKey, matchesVenue, isStarred, toggleStar } from './model.js';
 
 const startOfDay = (t) => { const d = new Date(t); d.setHours(0, 0, 0, 0); return d.getTime(); };
@@ -50,7 +50,7 @@ export function renderTimeline(root, data, { openDetail, tip }) {
     for (let i = 0; cursor.getTime() < end && i < 60; i++, cursor.setMonth(cursor.getMonth() + 1)) {
       const left = x(cursor.getTime());
       const jan = cursor.getMonth() === 0;
-      const label = cursor.toLocaleString(undefined, { month: long ? 'short' : 'narrow' }) + (jan || i === 0 ? ` ’${String(cursor.getFullYear()).slice(2)}` : '');
+      const label = cursor.toLocaleString(LOCALE, { month: long ? 'short' : 'narrow' }) + (jan || i === 0 ? ` ’${String(cursor.getFullYear()).slice(2)}` : '');
       axis.append(h('span.tl-tick' + (jan ? '.year' : ''), { style: { left: left + '%' } }, label));
       grid.append(h('i' + (jan ? '.year' : ''), { style: { left: left + '%' } }));
     }
@@ -134,7 +134,7 @@ function cycleTip(ed, c) {
     h('strong', `${ed.v.acronym} ${ed.e.year}`),
     c.label ? h('div.muted', c.label) : null,
     h('div', 'Submit: ', h('b', fmtDate(iso(c.dl)))),
-    h('div', c.notificationEstimated ? 'Decision (est.): ' : 'Decision: ', h('b', fmtDate(iso(c.nt)))),
+    h('div', c.notificationEstimated ? 'Decision date (est.): ' : 'Decision date: ', h('b', fmtDate(iso(c.nt)))),
     c.notificationEstimated ? h('div.muted', `Based on this venue's typical review time – not confirmed.`) : null);
 }
 
