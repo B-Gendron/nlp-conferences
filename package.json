@@ -1,5 +1,5 @@
 {
-  "name": "nlp-conferences",
+  "name": "venue-radar",
   "version": "2.0.0",
   "description": "Deadline radar for NLP/LLM and Semantic Web/Knowledge Engineering venues",
   "type": "module",

@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="https://b-gendron.github.io/nlp-conferences/"><b>▶ Open the app</b></a>
+  <a href="https://b-gendron.github.io/venue-radar/"><b>▶ Open the app</b></a>
   &nbsp;·&nbsp; no account, no install, your plan stays in your browser
 </p>
 
@@ -43,7 +43,7 @@ Venue Radar started as a PhD side-project (a Google Sheet plus a Gantt chart). I
 | ⭐ **My plan** | Star the venues you're considering. You get a chronological agenda, warnings when two deadlines collide, and an **"if the decision goes the wrong way"** panel that lists where you could resubmit. |
 | 📝 **Notes** | Jot down what you intend to submit to each venue (title, status, co-authors, to-dos). Saved in your browser. |
 | 🔎 **Filters** | By domain (NLP & LLMs · Semantic Web & KE · ML & AI · IR & Web), *neurosymbolic-friendly*, CORE rank, and free-text search (press `/`). |
-| 📆 **Calendar** | Subscribe to the [calendar feed](https://b-gendron.github.io/nlp-conferences/calendar.ics) in Google/Apple Calendar, or export just your plan as `.ics`. |
+| 📆 **Calendar** | Subscribe to the [calendar feed](https://b-gendron.github.io/venue-radar/calendar.ics) in Google/Apple Calendar, or export just your plan as `.ics`. |
 | 📤 **Export & backup** | Take your plan anywhere: **Markdown** (share with your advisor, paste into notes), **CSV** (Excel / Sheets), **`.ics`**, or a **JSON backup** with your notes that you can re-import on another browser or device. |
 | 🔗 **Share** | Send a colleague or your advisor a link to your plan. |
 | 🔔 **Latest venue info** | A log of deadlines that moved or were announced since the last sync. |
@@ -123,7 +123,7 @@ Commit and push, the site redeploys, done. Field documentation is at the top of 
 Requires Node ≥ 20.
 
 ```bash
-git clone https://github.com/B-Gendron/nlp-conferences.git && cd nlp-conferences
+git clone https://github.com/B-Gendron/venue-radar.git && cd venue-radar
 npm install
 npm run sync     # pull the latest upstream data (add --offline to reuse the cache)
 npm run serve    # http://localhost:8080
