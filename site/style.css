@@ -43,6 +43,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 /* ---------- header */
 .top { background: var(--surface); border-bottom: 1px solid var(--line); padding-bottom: 10px; }
 .top-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; padding-top: 14px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand .mark { width: 52px; height: 52px; flex: none; }
 .brand h1 { font: 700 26px/1 ui-serif, "Iowan Old Style", Georgia, serif; letter-spacing: -.01em; }
 .brand p { margin: 4px 0 0; color: var(--muted); font-size: 13.5px; }
 .top-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
@@ -221,6 +223,7 @@ pre { text-align: left; overflow: auto; }
 @media (max-width: 760px) {
   :root { --label-w: 138px; }
   .brand p { display: none; }
+  .brand .mark { width: 40px; height: 40px; }
   #tabs { margin-left: 0; width: 100%; } .tab { flex: 1; padding: 6px 4px; }
   .card { grid-template-columns: 1fr auto; } .card .when { grid-column: 1 / -1; display: flex; gap: 10px; align-items: baseline; }
   .plan-cols { grid-template-columns: 1fr; }
