@@ -44,6 +44,7 @@ Venue Radar started as a PhD side-project (a Google Sheet plus a Gantt chart). I
 | 📝 **Notes** | Jot down what you intend to submit to each venue (title, status, co-authors, to-dos). Saved in your browser. |
 | 🔎 **Filters** | By domain (NLP & LLMs · Semantic Web & KE · ML & AI · IR & Web), *neurosymbolic-friendly*, CORE rank, and free-text search (press `/`). |
 | 📆 **Calendar** | Subscribe to the [calendar feed](https://b-gendron.github.io/nlp-conferences/calendar.ics) in Google/Apple Calendar, or export just your plan as `.ics`. |
+| 📤 **Export & backup** | Take your plan anywhere: **Markdown** (share with your advisor, paste into notes), **CSV** (Excel / Sheets), **`.ics`**, or a **JSON backup** with your notes that you can re-import on another browser or device. |
 | 🔗 **Share** | Send a colleague or your advisor a link to your plan. |
 | 🔔 **Latest venue info** | A log of deadlines that moved or were announced since the last sync. |
 
@@ -59,7 +60,7 @@ Times are shown in your local timezone (or AoE, one click). Light/dark mode and 
 2. Click **☆** on the venues you're considering. Open **My plan**.
 3. Read the agenda, check the crunch warnings, and add a note per venue.
 4. Look at **"If the decision goes the wrong way"**. Add a fallback with **+ add**.
-5. Export the plan to your calendar.
+5. Export the plan (Markdown, CSV or calendar) to share or keep.
 
 ## Venues covered
 
@@ -144,7 +145,7 @@ assets/               logo and README screenshots
 ```
 
 - If upstream is unreachable during a sync, the last good data for that venue is kept.
-- Your plan and notes live in your browser's `localStorage`. There is no server and no tracking.
+- Your plan and notes live in your browser's `localStorage` (not cookies). There is no server and no tracking. Use **Export → Backup (.json)** and **Import backup** to move them between browsers or devices. Importing never overwrites a note you already have.
 - Deep links: `#view=plan&stars=emnlp26,iclr27` (shared plan) · `#edition=ecir27` (open a venue) · `#theme=dark`.
 
 </details>

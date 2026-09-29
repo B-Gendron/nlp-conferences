@@ -195,6 +195,8 @@ async function boot() {
   window.addEventListener('keydown', (e) => {
     if (e.key === '/' && document.activeElement !== q && !dlg.open) { e.preventDefault(); q.focus(); }
   });
+  // close the export dropdown when clicking elsewhere
+  document.addEventListener('click', (e) => document.querySelectorAll('details.menu[open]').forEach((m) => { if (!m.contains(e.target)) m.open = false; }));
   listeners.add(render);
   renderMeta();
   render();

@@ -1,8 +1,9 @@
 // "My plan": the starred venues as an agenda, with crunch warnings and "if rejected, where next?" fallbacks.
 
 import { h, DAY, debounce, fmtWeekday, fmtDay, fmtMonth, fmtDate, fmtRange, relative, rankClass } from './util.js';
-import { matches, milestones, isStarred, toggleStar, shareUrl, getNote, setNote, nextDeadline } from './model.js';
+import { state, update, matches, milestones, isStarred, toggleStar, shareUrl, getNote, setNote, nextDeadline } from './model.js';
 import { buildIcs } from './ics.js';
+import { planRows, toCsv, toMarkdown, toBackupJson, parseBackup, mergeBackup } from './export.js';
 
 /** Textarea that autosaves a private note for an edition (stored in this browser only). */
 export function noteEditor(ed, { rows = 3 } = {}) {
@@ -30,9 +31,10 @@ export function renderPlan(root, data, { openDetail, download }) {
   root.replaceChildren();
 
   if (!starred.length) {
-    root.append(h('div.empty',
+    root.append(flashNode(), h('div.empty',
       h('h3', 'Build your publication strategy'),
-      h('p', 'Star the venues you’re considering (☆ in the timeline or deadlines view). This page then lays out your year, flags deadline crunches, and shows where you could resubmit if a decision goes the wrong way.')));
+      h('p', 'Star the venues you’re considering (☆ in the timeline or deadlines view). This page then lays out your year, flags deadline crunches, and shows where you could resubmit if a decision goes the wrong way.'),
+      h('div.row-actions.center', importControl(data))));
     return;
   }
 
@@ -40,15 +42,16 @@ export function renderPlan(root, data, { openDetail, download }) {
   const events = starred.flatMap(milestones).filter((m) => (m.end ?? m.t) >= now - 14 * DAY).sort((a, b) => a.t - b.t);
 
   // ---- header / export
-  root.append(h('div.plan-head',
+  root.append(flashNode(), h('div.plan-head',
     h('p.muted', `${starred.length} venue${starred.length > 1 ? 's' : ''} in your plan.`),
-    h('div.row-actions', h('button.btn', {
-      onclick: (ev) => {
-        navigator.clipboard?.writeText(shareUrl()).then(() => { ev.target.textContent = 'Link copied ✓'; setTimeout(() => { ev.target.textContent = 'Copy share link'; }, 1800); });
-      },
-    }, 'Copy share link'), h('button.btn', {
-      onclick: () => download('my-plan.ics', buildIcs(data.venues.map((v) => ({ ...v, editions: v.editions.filter((e) => isStarred(e.id)) })).filter((v) => v.editions.length), new Date().toISOString(), 'My publication plan'), 'text/calendar'),
-    }, 'Export plan (.ics)'))));
+    h('div.row-actions',
+      h('button.btn', {
+        onclick: (ev) => {
+          navigator.clipboard?.writeText(shareUrl()).then(() => { ev.target.textContent = 'Link copied ✓'; setTimeout(() => { ev.target.textContent = 'Copy share link'; }, 1800); });
+        },
+      }, 'Copy share link'),
+      exportMenu(starred, data, download),
+      importControl(data))));
 
   // ---- heads-up
   const warnings = crunches(events, now);
@@ -144,4 +147,48 @@ function notesSection(starred, now, openDetail) {
           h('button.star.on', { title: 'Remove from my plan', onclick: () => toggleStar(ed.id) }, '★')),
         noteEditor(ed));
     })));
+}
+
+// -------------------------------------------------- export / import UI ----
+
+let flash = null;   // one-shot status message shown after an import (the view re-renders when state changes)
+const flashNode = () => {
+  const m = flash; flash = null;
+  return m ? h('div.flash' + (m.error ? '.error' : ''), { role: 'status' }, m.text) : null;
+};
+
+function exportMenu(starred, data, download) {
+  const stamp = new Date().toISOString().slice(0, 10);
+  const items = [
+    ['Markdown (.md)', 'Readable summary with your notes', () => download(`venue-radar-plan-${stamp}.md`, toMarkdown(starred, getNote), 'text/markdown')],
+    ['CSV (.csv)', 'One row per submission cycle, for Excel / Sheets', () => download(`venue-radar-plan-${stamp}.csv`, toCsv(planRows(starred, getNote)), 'text/csv')],
+    ['Calendar (.ics)', 'Deadlines, decisions and conferences', () => download(`venue-radar-plan-${stamp}.ics`, buildIcs(data.venues.map((v) => ({ ...v, editions: v.editions.filter((e) => isStarred(e.id)) })).filter((v) => v.editions.length), new Date().toISOString(), 'My publication plan'), 'text/calendar')],
+    ['Backup (.json)', 'Everything, incl. notes. Re-importable', () => download(`venue-radar-backup-${stamp}.json`, toBackupJson(starred, state), 'application/json')],
+  ];
+  const menu = h('details.menu', h('summary.btn', 'Export ▾'),
+    h('div.menu-list', items.map(([label, hint, run]) =>
+      h('button', { onclick: () => { run(); menu.open = false; } }, h('strong', label), h('span.muted.small', hint)))));
+  return menu;
+}
+
+function importControl(data) {
+  const input = h('input', { type: 'file', accept: 'application/json,.json', hidden: true, 'aria-hidden': 'true' });
+  input.addEventListener('change', async () => {
+    const file = input.files[0];
+    input.value = '';
+    if (!file) return;
+    try {
+      const imported = parseBackup(await file.text(), data.editions.map((e) => e.id));
+      const merged = mergeBackup(state, imported);
+      const bits = [`${merged.addedStars} venue${merged.addedStars === 1 ? '' : 's'} added`, `${merged.addedNotes} note${merged.addedNotes === 1 ? '' : 's'} added`];
+      if (merged.keptNotes) bits.push(`${merged.keptNotes} existing note${merged.keptNotes === 1 ? '' : 's'} kept (yours won)`);
+      if (imported.ignored) bits.push(`${imported.ignored} entr${imported.ignored === 1 ? 'y' : 'ies'} skipped (venue no longer tracked)`);
+      flash = { text: `Backup imported: ${bits.join(' · ')}.` };
+      update({ stars: merged.stars, notes: merged.notes });
+    } catch (err) {
+      flash = { text: err.message, error: true };
+      update({});
+    }
+  });
+  return h('span', h('button.btn', { onclick: () => input.click(), title: 'Restore stars and notes from a Venue Radar backup (.json)' }, 'Import backup'), input);
 }
