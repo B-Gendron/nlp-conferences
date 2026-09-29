@@ -1,3 +1,5 @@
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+   Copyright (C) 2026 Barbara Gendron */
 :root {
   --bg: #f7f6f3; --surface: #ffffff; --surface-2: #f0eeea; --line: #e2dfd8; --line-2: #eceae4;
   --text: #1c1b22; --muted: #6b6a75; --accent: #5b47e0; --accent-soft: #ece9fd;

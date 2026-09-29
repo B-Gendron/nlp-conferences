@@ -16,6 +16,12 @@
 </p>
 
 <p align="center">
+  <a href="LICENSE"><img alt="License: AGPL-3.0-or-later" src="https://img.shields.io/badge/license-AGPL--3.0--or--later-5b47e0"></a>
+  <a href="https://github.com/B-Gendron/venue-radar/actions/workflows/sync-and-deploy.yml"><img alt="Sync and deploy" src="https://github.com/B-Gendron/venue-radar/actions/workflows/sync-and-deploy.yml/badge.svg"></a>
+  <img alt="No runtime dependencies" src="https://img.shields.io/badge/runtime%20dependencies-0-0b8a7c">
+</p>
+
+<p align="center">
   <img src="assets/screenshot-timeline.png" alt="Timeline view: submission-to-decision windows and conference dates for each venue" width="900">
 </p>
 
@@ -155,6 +161,18 @@ assets/               logo and README screenshots
 - Notification dates are the weak spot of every public dataset. Help improve them via `data/overrides.yml`.
 - The CORE rank shown is whatever upstream currently carries. Unranked venues appear as "Unranked".
 - Estimated decision dates are deliberately not produced for ARR-based venues, since a single review duration would be misleading.
+
+## Contributing
+
+Corrections to dates are the most useful contribution and need no code. See [CONTRIBUTING.md](CONTRIBUTING.md), or open a [date-correction issue](https://github.com/B-Gendron/venue-radar/issues/new/choose).
+
+## License and citation
+
+Venue Radar is free software under the **[GNU Affero General Public License v3.0 or later](LICENSE)**. You may use, study, modify and share it, but if you distribute a modified version, or run one as a service for others, you must make your modified source available under the same license.
+
+Conference data derived from [ccfddl/ccf-deadlines](https://github.com/ccfddl/ccf-deadlines) remains under its MIT license (see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)).
+
+If this tool helped your research planning, you can cite it using the "Cite this repository" button on GitHub (from [`CITATION.cff`](CITATION.cff)).
 
 ## Credits
 

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 Barbara Gendron
 // iCalendar generation, shared by the sync script (calendar.ics feed) and the browser (per-edition / plan export).
 
 const DAY = 86400000;

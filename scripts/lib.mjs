@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 Barbara Gendron
 // Pure helpers for the sync pipeline (no I/O, so they can be unit-tested).
 
 const MONTHS = {

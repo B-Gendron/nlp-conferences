@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Question about the dataset itself
+    url: https://github.com/ccfddl/ccf-deadlines/issues
+    about: If a submission deadline is wrong for every tracker, it is usually best fixed upstream too.

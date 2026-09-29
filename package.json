@@ -2,6 +2,25 @@
   "name": "venue-radar",
   "version": "2.0.0",
   "description": "Deadline radar for NLP/LLM and Semantic Web/Knowledge Engineering venues",
+  "license": "AGPL-3.0-or-later",
+  "author": "Barbara Gendron",
+  "homepage": "https://b-gendron.github.io/venue-radar/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B-Gendron/venue-radar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/B-Gendron/venue-radar/issues"
+  },
+  "keywords": [
+    "conference-deadlines",
+    "nlp",
+    "semantic-web",
+    "knowledge-graphs",
+    "neurosymbolic",
+    "call-for-papers",
+    "research-tools"
+  ],
   "type": "module",
   "private": true,
   "scripts": {
@@ -12,5 +31,7 @@
   "dependencies": {
     "js-yaml": "^4.1.0"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }

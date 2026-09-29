@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 Barbara Gendron
 // Timeline (Gantt) view: one row per edition; submission → notification windows, deadline markers, conference span.
 
 import { h, DAY, LOCALE, fmtDate, fmtRange, fmtDateTime, relative, rankClass } from './util.js';

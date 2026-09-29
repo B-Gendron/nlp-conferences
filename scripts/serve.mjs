@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 Barbara Gendron
 // Tiny static file server for local preview: `npm run serve` -> http://localhost:8080
 import http from 'node:http';
 import { readFile } from 'node:fs/promises';

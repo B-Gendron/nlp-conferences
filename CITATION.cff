@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use Venue Radar in your research planning or build on it, please cite it as below."
+type: software
+title: "Venue Radar: deadlines and decision dates for NLP/LLM and Semantic Web/Knowledge Engineering venues"
+authors:
+  - family-names: Gendron
+    given-names: Barbara
+repository-code: "https://github.com/B-Gendron/venue-radar"
+url: "https://b-gendron.github.io/venue-radar/"
+license: AGPL-3.0-or-later
+keywords:
+  - conference deadlines
+  - natural language processing
+  - semantic web
+  - knowledge engineering
+  - neurosymbolic AI

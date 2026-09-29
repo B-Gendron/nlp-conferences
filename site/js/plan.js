@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 Barbara Gendron
 // "My plan": the starred venues as an agenda, with crunch warnings and "if rejected, where next?" fallbacks.
 
 import { h, DAY, debounce, fmtWeekday, fmtDay, fmtMonth, fmtDate, fmtRange, relative, rankClass } from './util.js';

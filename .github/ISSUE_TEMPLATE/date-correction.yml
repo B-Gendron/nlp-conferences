@@ -1,0 +1,33 @@
+name: Wrong or missing date
+description: A deadline, decision date or conference date is wrong, missing or has moved.
+labels: [data]
+body:
+  - type: input
+    id: venue
+    attributes:
+      label: Venue and year
+      placeholder: "e.g. ISWC 2026"
+    validations: { required: true }
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is wrong?
+      options:
+        - Submission deadline
+        - Decision / notification date
+        - Conference dates or location
+        - Venue is missing from the tool
+        - Other
+    validations: { required: true }
+  - type: textarea
+    id: correct
+    attributes:
+      label: What should it say?
+      description: Include the timezone if the page gives one (e.g. AoE).
+    validations: { required: true }
+  - type: input
+    id: source
+    attributes:
+      label: Official page confirming it
+      placeholder: "https://…"
+    validations: { required: true }

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 Barbara Gendron
 import { h, icon, LOCALE, DOMAINS, RANKS, rankClass, fmtDate, fmtDateTime, fmtRange, relative, originalTime, tzMode, debounce, DAY } from './util.js';
 import { state, update, listeners, loadData, isStarred, toggleStar, matches } from './model.js';
 import { renderTimeline } from './timeline.js';

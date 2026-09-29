@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 Barbara Gendron
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { toUtcIso, parseDateRange, applyOverride, estimateNotifications, diffDatasets, buildIcs, normalizeCycle } from './lib.mjs';

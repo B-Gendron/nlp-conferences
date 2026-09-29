@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 Barbara Gendron
 // Deadlines view: what can I still submit to, soonest first – with countdowns and decision dates.
 
 import { h, DAY, fmtWeekday, fmtDateTime, fmtDate, fmtRange, relative, urgency, rankClass, originalTime, DOMAINS } from './util.js';

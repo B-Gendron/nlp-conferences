@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 Barbara Gendron
 // Small shared helpers: DOM builder, date formatting, ranks, domains.
 
 export const DAY = 86400000;

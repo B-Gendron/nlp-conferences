@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 Barbara Gendron
 // Export / import of the publication plan: CSV, Markdown, JSON backup. Pure functions (no DOM) so they can be unit-tested.
 
 const pad = (n) => String(n).padStart(2, '0');

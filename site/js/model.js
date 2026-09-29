@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 Barbara Gendron
 // Data loading, persisted UI state and filtering.
 
 import { ms, rankOf, conferenceDayMs, DAY } from './util.js';

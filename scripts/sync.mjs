@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 Barbara Gendron
 // Build site/data/conferences.json (+ calendar.ics, changelog.json) from
 //   data/venues.yml       – which venues to track (+ manual editions)
 //   data/overrides.yml    – hand-curated fixes / notification dates
