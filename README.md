@@ -45,7 +45,7 @@ Venue Radar started as a PhD side-project (a Google Sheet plus a Gantt chart). I
 | 🔎 **Filters** | By domain (NLP & LLMs · Semantic Web & KE · ML & AI · IR & Web), *neurosymbolic-friendly*, CORE rank, and free-text search (press `/`). |
 | 📆 **Calendar** | Subscribe to the [calendar feed](https://b-gendron.github.io/nlp-conferences/calendar.ics) in Google/Apple Calendar, or export just your plan as `.ics`. |
 | 🔗 **Share** | Send a colleague or your advisor a link to your plan. |
-| 🔔 **What changed** | A log of deadlines that moved or were announced since the last sync. |
+| 🔔 **Latest venue info** | A log of deadlines that moved or were announced since the last sync. |
 
 Times are shown in your local timezone (or AoE, one click). Light/dark mode and phone layout included.
 

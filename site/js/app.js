@@ -143,10 +143,10 @@ function renderMeta() {
       `Data synced ${age <= 0 ? 'today' : age + ' day' + (age > 1 ? 's' : '') + ' ago'}${age > 14 ? ' – may be out of date' : ''}`));
   const ch = data.changes.slice(0, 30);
   const btn = $('#changes-btn');
-  btn.textContent = ch.length ? `What changed (${ch.length})` : 'What changed';
+  btn.textContent = ch.length ? `Latest venue info (${ch.length})` : 'Latest venue info';
   btn.onclick = () => {
     const box = h('div.detail',
-      h('header', h('h2', 'Recent changes'), h('button.icon', { 'aria-label': 'Close', onclick: () => dlg.close() }, '✕')),
+      h('header', h('h2', 'Latest venue info'), h('button.icon', { 'aria-label': 'Close', onclick: () => dlg.close() }, '✕')),
       ch.length ? h('ul.changes', ch.map((c) => h('li',
         h('span.muted', new Date(c.at).toLocaleDateString(LOCALE)), ' ',
         h('strong', `${c.venue} ${c.year}`), ' ',
@@ -162,7 +162,7 @@ function renderMeta() {
 
 function render() {
   tzMode.value = state.tz;
-  $('#tz').textContent = state.tz === 'aoe' ? 'Times: AoE' : 'Times: local';
+  $('#tz').textContent = state.tz === 'aoe' ? 'Time: AoE' : 'Time: local';
   renderControls();
   renderTabs();
   const ctx = { openDetail, tip, download };
